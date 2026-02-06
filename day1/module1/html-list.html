@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Lists and Tables Exercise</title>
+        <style>
+            body{
+                font-family: Arial,sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            /* Header */
+            header{
+                text-align: center;
+                padding: 20px;
+            }
+
+            /* Navigation bar */
+            nav{
+                background-color:#333;
+                padding: 10px;
+            }
+
+            nav a{
+                text-decoration: none;
+                color: white;
+                margin:0 15px;
+            }
+            /* Main content */
+            main{
+                display: flex;
+                justify-content: center;
+                gap:60px;
+                padding: 30px;
+            }
+            .left,
+            .right{
+                width:420px;
+            }
+
+            .left li{
+                margin-bottom: 6px;
+            }
+
+            dl{
+                margin:0;
+            }
+
+            dt{
+                font-weight: bold;
+            }
+            dd{
+                margin:6px;
+                margin-left: 0;
+            }
+
+            /* Table Styling */
+            table{
+                width:100%;
+                border-collapse: collapse;
+                
+            }
+            table,th,td{
+                border:1px solid #333;
+            }
+            th,td{
+                padding: 8px;
+                text-align: center;
+            }
+
+
+            /* footer */
+            footer{
+                text-align: center;
+                padding: 15px;
+                color:gray;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>HTML Lists and Tables</h1>
+        <nav>
+            <a href="#"> Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+        </header>
+
+        <main>
+            <!-- List section -->
+            <section class="left">
+                <h2>Ordered List:</h2>
+                <ol>  
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ol>
+
+                <h2>Unordered List:</h2>
+                <ul>
+                    <li>Bullet Point 1</li>
+                    <li>Bullet Point 2</li>
+                    <li>Bullet Point 3</li>
+                </ul>
+
+                <h2>Description List:</h2>
+                <dl>
+                    <dt>Term 1</dt>
+                    <dd>Definition</dd>
+                
+                
+                    <dt>Term 2</dt>
+                    <dd>Definition</dd>
+                </dl>
+            </section>
+
+            <!-- Table section-->
+
+            <section class="right">
+                <h2>Simple Table:</h2>
+                <table border="1">
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>City</th>
+                        <th>Occupation</th>
+                    </tr>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>28</td>
+                        <td>New York</td>
+                        <td>Developer</td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>34</td>
+                        <td>London</td>
+                        <td>Designer</td>
+                    </tr>
+                    <tr>
+                        <td>Tom Brown</td>
+                        <td>22</td>
+                        <td>Toronto</td>
+                        <td>Student</td>
+                    </tr>
+                </table>
+            </section>
+
+           
+        </main>
+
+        <footer>
+           <p>© 2026 My First HTML Page</p>
+        </footer>
+
+
+    </body>
+    
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <title>Contact Form</title>
+    <style>
+        body{
+            font-family: Arial,  sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav{
+            background-color: #333;
+            padding: 10px;
+        }
+        nav a{
+            text-decoration: none;
+            color: white;
+            margin:0 15px;
+        }
+
+        /* Main */
+        main{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .container{
+            width: 350px;
+            padding: 20px;
+            border: 1px solid #333;
+        }
+
+        input,textarea{
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            background-color:#333;
+            color:white;
+            border:none;
+        }
+
+        footer{
+            text-align: center;
+            margin-top: 30px;
+            color:gray;
+        }
+
+
+    </style>
+    <body>
+        <!-- Header -->
+        <header>
+            <h1>Contact Form</h1>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Container -->
+             <div class="container">
+                <h2>Contact Us</h2>
+                <form>
+                    <label>Name:</label><br>
+                    <input type="text"><br><br>
+
+                    <label>Email:</label>
+                    <input type="email"><br><br>
+
+                    <label>Phone:</label>
+                    <input type="number"><br><br>
+
+                    <label>Message:</label>
+                    <textarea rows="4"></textarea><br><br>
+
+                    <button type="submit">Submit</button>
+                </form>
+             </div>
+        </main>
+
+        <!-- Footer -->
+         <footer>
+            <p>© 2026 My First HTML Page</p>
+         </footer>
+    </body>
+</html>
