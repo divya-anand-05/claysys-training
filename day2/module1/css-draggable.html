@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draggable Exercise</title>
+    <style>
+        body {
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            color: #333;
+        }
+
+        /* Header */
+
+        header {
+            text-align: center;
+            background-color: #e5e5e5;
+            padding: 10px;
+        }
+
+        /* Reletive container */
+        .relative-container {
+            position: relative;
+            background-color: #e5e5e5;
+            margin: 40px auto;
+            border: 3px solid #333;
+            width: 400px;
+            height: 300px;
+        }
+
+        /* Drag box inside relative Container */
+        .drag-box {
+            position: absolute;
+            top: 80px;
+            left: 50px;
+            width: 160px;
+            height: 60px;
+            background-color: green;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: grab;
+            user-select: none;
+        }
+
+        /* Fixed Drag Box */
+        .fixed-drag-box {
+            position: fixed;
+            bottom: 180px;
+            left: 250px;
+            width: 200px;
+            height: 60px;
+            background-color: #2196F3;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: grab;
+            user-select: none;
+            z-index: 1000;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #e5e5e5;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Draggable Exercise</h1>
+    </header>
+    <!-- Main Section -->
+    <main>
+        <!-- relative container -->
+        <div class="relative-container" id="relativeContainer">
+            <div class="drag-box" id="boxInside">Drag Me Within Box</div>
+
+        </div>
+        <!-- Fixed Drag box -->
+        <div class="fixed-drag-box" id="boxWindow">
+            Drag Me Within Window
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer>
+        © 2026 Draggable Divs Exercise
+    </footer>
+
+</body>
+
+</html>
