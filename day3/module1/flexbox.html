@@ -20,6 +20,7 @@
             color: #333;
         }
 
+        /* Header */
 
         header {
             padding: 10px;
@@ -32,6 +33,7 @@
             margin: 0;
         }
 
+        /* Navigation bar */
         nav ul {
             list-style: none;
             display: flex;
@@ -63,9 +65,14 @@
             border-radius: 2px;
         }
 
+        /* Main section */
+
         main {
             flex: 1;
+            /* fill available space and grow equally*/
         }
+
+        /* content box container */
 
         .content-container {
             display: flex;
@@ -75,6 +82,7 @@
             padding: 40px 20px;
         }
 
+        /* content box */
         .box {
             background-color: #4cAF50;
             color: white;
@@ -86,6 +94,8 @@
             border-radius: 2px;
         }
 
+        /* footer */
+
         footer {
             background-color: #e5e5e5;
             text-align: center;
@@ -93,19 +103,24 @@
             font-size: 14px;
         }
 
+        /* Responsive Web design */
+
+        /* For mobile view*/
+
         @media(max-width:480px) {
             nav ul {
                 flex-direction: column;
                 align-items: center;
             }
 
-            h1{
+            h1 {
                 font-size: 24px;
             }
+
             nav a {
-               width:100%;
-               display: inline-block;
-               text-align: center;
+                width: 100%;
+                display: inline-block;
+                text-align: center;
             }
 
 
@@ -116,14 +131,18 @@
             }
         }
 
+        /* For tablet*/
+
         @media(min-width:481px) and (max-width: 768px) {
             .box {
-               width:200px;
-               font-size: 15px;
+                width: 200px;
+                font-size: 15px;
             }
         }
 
-        @media(min-width:769px)and (max-width:1024px){
+        /* For desktop*/
+
+        @media(min-width:769px)and (max-width:1024px) {
             .box {
                 width: 350px;
                 font-size: 16px;
@@ -133,6 +152,7 @@
 </head>
 
 <body>
+    <!-- Heade section -->
     <header>
         <h1>FlexBox Layout Example</h1>
         <nav>
@@ -144,6 +164,7 @@
             </ul>
         </nav>
     </header>
+    <!-- Main section -->
     <main>
         <section class="content-container">
             <div class="box">Content Box 1</div>
@@ -154,6 +175,8 @@
             <div class="box">Content Box 6</div>
         </section>
     </main>
+
+    <!-- footer -->
 
     <footer>
         © 2026 Flexbox Layout Example
