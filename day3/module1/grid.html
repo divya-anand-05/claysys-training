@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout Example</title>
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+        }
+        
+
+        .grid-container{
+            display: grid;
+            min-height: 100vh;
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns:1fr 3fr;
+            grid-template-areas: 
+            "header header"
+            "sidebar main-content"
+            "footer footer";
+            gap:5px;
+            padding:10px;
+        }
+
+        header{
+            grid-area: header;
+            background-color: #4caf50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .sidebar{
+            grid-area: sidebar;
+            background-color:#e5e5e5 ;
+            padding:20px;
+            font-size: 18px;
+            color:#333;
+        }
+
+        .main-content{
+            grid-area: main-content;
+            background-color:#d5d2d2;
+            padding:20px;
+            font-size: 18px;
+            color:#333;
+        }
+
+        footer{
+            grid-area: footer;
+            background-color: #4caf50;
+            color:white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        @media(max-width:480px){
+            .grid-container{
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                "header"
+                "sidebar"
+                "main-content"
+                "footer"; 
+            }
+            header,footer{
+                font-size: 14px;
+            }
+        }
+
+        @media(max-width:768px){
+            .sidebar,.main-content{
+                font-size:16px;
+            }
+        }
+        @media (min-width:1024px){
+            .sidebar,.main-content{
+                font-size:18px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+    <header>
+
+        <h1>Grid Layout Example</h1>
+    </header>
+
+    
+        <aside class="sidebar">
+            Sidebar
+        </aside>
+
+        <main class="main-content">
+            Main Content Area
+        </main>
+
+       
+
+        <footer>
+    © 2026 Grid Layout Example
+</footer>
+ </div>
+</body>
+
+
+</html>
