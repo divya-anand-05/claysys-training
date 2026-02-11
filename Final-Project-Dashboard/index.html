@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
@@ -15,7 +16,7 @@
         <div class="dashboard">
 
             <!-- Sidebar -->
-            <aside class="sidebar">
+            <aside class="sidebar" id="sidebar">
                 <h2 class="logo">Your</h2>
                 <nav class="menu">
                     <a class="menu-item" href="#">
@@ -51,10 +52,16 @@
 
                 <!-- header -->
                 <header class="topbar">
+                    <div class="hamburger" onclick="toggleMenu()">
+                        ☰
+                    </div>
+                    <div class="overlay" onclick="closeMenu()"></div>
                     <h2 class="title">Order</h2>
+                    <div class="search-container">
                     <div class="search-box">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <input type="text" placeholder="Search in Knock N' Door">
+                    </div>
                     </div>
 
                     <div class="top-actions">
@@ -207,7 +214,7 @@
 
                     </div>
 
-                       <!-- Pending list row -->
+                    <!-- Pending list row -->
                     <div class="order-row-pending">
                         <span class="order-id">#2539</span>
                         <span class="customer">Jordan Smith</span>
@@ -224,6 +231,16 @@
             </main>
         </div>
     </div>
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("active");
+            document.querySelector(".overlay").classList.toggle("active");
+        }
+        function closeMenu() {
+            document.getElementById("sidebar").classList.remove("active");
+            document.querySelector(".overlay").classList.remove("active");
+        }
+    </script>
 </body>
 
 </html>

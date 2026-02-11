@@ -7,6 +7,7 @@
 
 }
 
+/* body */
 body {
 
     min-height: 100vh;
@@ -22,6 +23,8 @@ body {
             #8fd3d3 0%,
             #bcf5e0 50%,
             #d8f4e7 100%);
+    display: flex;
+    justify-content: center;
     margin: 0;
     padding: 40px;
     color: #333;
@@ -31,6 +34,7 @@ body {
 
 .dashboard-wrapper {
     height: 100%;
+    width: 100%;
     border: 2px solid #ffffff;
     border-radius: 30px;
     padding: 20px;
@@ -39,12 +43,19 @@ body {
 /* grid layout */
 .dashboard {
     display: grid;
+    width: 100%;
+    max-width: 1400px;
     height: 100%;
+    overflow: hidden;
     grid-template-columns: 230px 1fr;
     background: #fff;
     border-radius: 30px;
 }
 
+.hamburger{
+    cursor: pointer;
+    display: none;
+}
 /* sidebar */
 .sidebar {
     height: 100%;
@@ -120,9 +131,10 @@ body {
     background: #d2f1f9;
     padding: 20px;
     display: flex;
+    flex: 1;
     flex-direction: column;
     margin: 20px;
-    height: calc(100%-40px);
+    height: calc(100% - 40px);
     overflow-y: auto;
     border-radius: 20px;
 }
@@ -135,9 +147,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex: wrap;
     margin-bottom: 15px;
     background: #d2f1f9;
-    ;
+    gap: 15px;
 }
 
 /* Title */
@@ -146,31 +159,35 @@ body {
     font-weight: normal;
 }
 
-/* Search */
-.search-box {
+.search-container {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-left: 450px;
+    flex: 1;
+    justify-content: flex-end;
+    gap: 20px;
+}
 
-    background: #ffffff;
-    padding: 15px 16px;
-    border-radius: 10px;
-    width: 360px;
+/* Search */
+.search-box {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
 }
 
 /* Search bar icon */
-
 .search-box i {
+    position: absolute;
+    left: 12px;
+    top: 40%;
     color: #9ca3af;
     font-size: 14px;
 }
 
-
 .search-box input {
+    padding: 10px 14px;
+    padding-left: 36px;
+    border-radius: 20px;
     border: none;
-    margin-left: px;
-
     outline: none;
     width: 100%;
     font-size: 14px;
@@ -223,7 +240,6 @@ body {
 }
 
 .profile img {
-
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -231,7 +247,6 @@ body {
 }
 
 .profile i {
-
     font-size: 12px;
     color: #374151;
 }
@@ -271,9 +286,9 @@ body {
 /* complete order card row */
 
 .order-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
     background: #c3f2df;
     padding: 12px 20px;
     border-radius: 10px;
@@ -284,28 +299,18 @@ body {
     font-size: 14px;
 }
 
-.order-id {
-    width: 5%;
-}
-
-.date {
-    width: 10%;
-    margin-left: 40px;
-}
-
-.amount {
-    width: 5%;
-    margin-left: 60px;
-}
-
 /* Status */
 
 .status {
-    width: 10%;
-    text-align: center;
-    padding: 5px 12px;
+    display: inline-block;
+    width: auto;              /* let content define width */
+    max-width: 70px;
+    padding: 5px 10px;
     border-radius: 20px;
-    font-size: 13px;
+    font-size: 12px;
+    text-align: center;
+    color: white;
+    white-space: nowrap;
 }
 
 /* Completed status */
@@ -313,44 +318,34 @@ body {
 .completed {
     background: #4cAF50;
     color: white;
-    padding: 6px;
-    border-radius: 15px;
+
 }
+
+/* Pending Status */
+
+.pending {
+    background: #d9f2f9;
+    color: #2b8aa3;
+}
+
+/* settings and arrow icons */
 
 .icons {
     display: flex;
     gap: 20px;
     font-size: 15px;
+    flex-wrap: nowrap;
     cursor: pointer;
+    height: auto;
 
-}
-
-.gear {
-    border-radius: 6px;
-    background: #e8e6e6;
-    width: 30px;
-    padding: 8px;
-    text-align: center;
-
-}
-
-.arrow {
-    border-radius: 6px;
-    background: #e8e6e6;
-    width: 30px;
-    padding: 8px;
-    text-align: center;
 }
 
 /* table */
 
 .table-container {
-    max-height: 60vh;
-    overflow-y: auto;
     margin-top: 5px;
     background: #fff;
     border-radius: 15px;
-    overflow: hidden;
     padding: 5px 8px;
 }
 
@@ -358,6 +353,7 @@ body {
 
 .order-card {
     max-width: 1100px;
+    width: 100%;
     margin: 5px auto;
     background: white;
     border-radius: 12px;
@@ -410,26 +406,10 @@ body {
     text-align: center;
 }
 
-.pending {
-    background: #d9f2f9;
-    color: #2b8aa3;
-}
-
 .row .action {
     font-size: 15px;
     cursor: pointer;
     color: #4b5563;
-}
-
-
-
-
-/* Pending status */
-.pending {
-    background: #e3f5ff;
-    padding: 5px 10px;
-    border-radius: 20px;
-    color: #0077aa;
 }
 
 /* order details table */
@@ -448,35 +428,19 @@ body {
 .details {
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 0 20px;
+    padding: 10px;
 }
-
-
-
 
 table {
     width: 100%;
-    table-layout: fixed;
     border-collapse: collapse;
-}
-th {
-    padding: 14px 10px;
-}
-
-th,
-td {
-    text-align: left;
-    white-space: nowrap;
-}
-
-td {
-    padding: 20px 10px;
-    font-size: 13px;
 }
 
 .details th,
 td {
     padding: 12px 10px;
+    font-size: 14px;
+    text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
@@ -493,6 +457,7 @@ tbody tr:last-child td {
 .total {
     padding-left: 85px;
 }
+
 /* Cancel and accept Buttons */
 
 .actions {
@@ -503,11 +468,15 @@ tbody tr:last-child td {
     padding: 0 50px;
 }
 
+.actions button {
+    padding: 10px 18px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
 .cancel {
     background: transparent;
     border: 1px solid #4aa3c5;
-    padding: 10px 18px;
-    border-radius: 2px;
     color: #4aa3c5;
 }
 
@@ -519,8 +488,6 @@ tbody tr:last-child td {
 .accept {
     background: #1e9bf0;
     border: none;
-    padding: 10px 18px;
-    border-radius: 5px;
     color: white;
 }
 
@@ -529,14 +496,7 @@ tbody tr:last-child td {
     opacity: .9;
 }
 
-.actions-cell {
-    text-align: right;
-    padding: 25px 50px;
-}
 
-.actions-cell button {
-    margin-right: 80px;
-}
 
 /* pending order row */
 
@@ -544,16 +504,17 @@ tbody tr:last-child td {
 
     background: #ffffff;
     /* ← white background */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 18px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    padding: 12px 20px;
     border-radius: 10px;
     max-width: 1100px;
-    margin: 15px auto;
-    border: 1px solid #ddd;
+    width: 100%;
+    margin: 15px 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
     color: #2b2b2b;
     font-size: 14px;
-    padding: 14px 22px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    border: 1px solid #ddd;
+
 }
