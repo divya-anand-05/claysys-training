@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Simple Interest Calculator</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+        }
+
+        .wrapper{
+            padding: 15px;
+            border: 3px solid #1e90ff;
+        }
+        .calculator{
+            width:350px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            border:2px solid #333;
+            text-align: center;
+        }
+
+        h2{
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        label{
+            display: block;
+            margin-top: 10px;
+        }
+
+        input{
+            width:100%;
+            padding: 8px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border:1px solid #ccc;
+        }
+        button{
+            width: 180px;
+            margin-top: 20px;
+            padding: 10px;
+            background: #28a745;
+            color:#fff;
+            border:none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover{
+            background:#218838;
+        }
+
+        .result{
+            margin-top: 25px;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        .error{
+            color:red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+    <div class="calculator">
+        <h2>Advanced Simple Interest Calculator</h2>
+
+        <label>Principal Amount:</label>
+        <input type="number" id="principal" placeholder="Enter principal amount">
+
+        <label>Rate of Interest (%):</label>
+        <input type="number" id="rate" placeholder="Enter interest rate" disabled>
+
+        <label>Time (Years):</label>
+        <input type="number" id="time" placeholder="Enter time in years">
+
+        <button onclick="calculateInterest()">Calculate Interest</button>
+
+        <div class="error" id="errorMsg"></div>
+
+        <div class="result">
+            <p><strong>Interest:</strong><span id="interest"></span></p>
+            <p><strong>Total Amount:</strong><span id="total"></span></p>
+            <p><strong>Additional Information:</strong></p>
+            <p id="info"></p>
+        </div>
+
+    </div>
+    </div>
+
+    <script>
+        
+        // Input validation function
+
+        function validatePrincipal(principal){
+            if (principal < 500 || principal > 10000 ){
+                return false;
+            }
+            return true;
+        }
+
+        // Base rate Logic Function
+
+        function getBaseRate(principal){
+            if(principal < 1000){
+                return 5;
+            }
+            else if(principal<=5000){
+                return 7;
+            }
+            else{
+                return 10;
+            }
+        }
+
+        // Bonus Apply Function
+
+        function applyBonus(rate,time){
+            if(time > 5){
+                return rate + 2;
+            }
+            return rate;
+        }
+
+        // Main function
+        function calculateInterest(){
+            let principal=Number(document.getElementById("principal").value);
+            let time=Number(document.getElementById("time").value);
+            let rate=Number(document.getElementById("rate").value);
+            let errorMsg=document.getElementById("errorMsg");
+
+            errorMsg.innerHTML="";
+
+            if(isNaN(principal) || isNaN(time) || principal === 0 || time ===0){
+                errorMsg.innerHTML="Please enter valid numeric values.";
+                return;
+            }
+
+            if(!validatePrincipal(principal)){
+                errorMsg.innerHTML= "Principal must be between $500 and $10,000.";
+                return;
+            }
+
+            let baseRate = getBaseRate(principal);
+            let Rate = applyBonus(baseRate, time);
+
+            document.getElementById("rate").value = Rate + "%";
+
+            // core logic
+            let interest = (principal * Rate * time) / 100;
+            let totalAmount = principal + interest;
+
+            document.getElementById("interest").innerHTML = "$" + interest.toFixed(2);
+            document.getElementById("total").innerHTML = "$" +  totalAmount.toFixed(2);
+
+            let infoText = `
+               Base Rate Applied: ${baseRate}% <br>
+               Bonus Applied: ${time > 5 ? "Yes (+2%)" : "No"} <br>
+               Final Interest Rate: ${Rate}% `;
+            
+            document.getElementById("info").innerHTML = infoText;   
+
+        }
+
+    </script>
+</body>
+</html>

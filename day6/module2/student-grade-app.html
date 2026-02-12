@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grades App</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .wrapper {
+            padding: 15px;
+            border: 3px solid #1e90ff;
+        }
+
+        .container {
+            width: 350px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid #333;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 180px;
+            margin-top: 20px;
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        p{
+          text-align: start;  
+        }
+
+        ul {
+            justify-self: start;
+            font-weight: bold;
+        }
+
+        #averageResult {
+            justify-self: start;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h2>Student Grades Management</h2>
+            <label>Student Name:</label>
+            <input type="text" id="studentName" placeholder="Enter student name">
+            <label>Grade:</label>
+            <input type="number" id="studentGrade" placeholder="Enter grade">
+
+
+            <div class="student-btn">
+                <button onclick="addStudent()">Add Student</button>
+                <button onclick="displayStudents()">Display Grades</button>
+            </div>
+
+            <p><b>Grades List:</b></p>
+            <ul id="studentList"></ul>
+
+            <div class="avg-btn">
+                <button onclick="calculateAverage()">Calculate Average Grade</button>
+            </div>
+
+            <p id="averageResult">Average Grade:</p>
+        </div>
+        <script>
+            // Data storage(core concept)
+
+            let students = [];      //{name:"Divya" ,grade:85}
+            function addStudent() {
+                let name = document.getElementById("studentName").value;
+                let grade = document.getElementById("studentGrade").value;
+
+                if (name === "" || grade === "") {
+                    alert("Please enter both name and grade");
+                    return;
+                }
+
+                grade = Number(grade);
+
+                if (isNaN(grade) || grade < 0 || grade > 100) {
+                    alert("Grade must be a number between 0 and 100");
+                    return;
+                }
+
+                let student = {
+                    name: name,
+                    grade: grade
+                };
+
+                students.push(student);
+
+                document.getElementById("studentName").value = "";
+                document.getElementById("studentGrade").value = "";
+
+                alert("Student added Successfully");
+            }
+
+            // Display student
+
+            function displayStudents() {
+                let list = document.getElementById("studentList");
+                list.innerHTML = "";
+
+                students.forEach((student) => {
+                    let li = document.createElement("li");
+                    li.textContent = `${student.name} - ${student.grade}`;
+                    list.appendChild(li);
+                });
+            }
+            // Calculate average 
+            function calculateAverage() {
+                if (students.length === 0) {
+                    alert("No students available");
+                    return;
+                }
+            
+
+                let total = students.reduce((sum, student) => {
+                     console.log("Accumulator:", sum, "Current:", student.grade);
+                    return sum +student.grade ;
+                }, 0);
+
+                let average = total / students.length;
+
+                document.getElementById("averageResult").textContent =
+                    "Average Grade: " + average.toFixed(2);
+            }
+
+        </script>
+</body>
+
+</html>
