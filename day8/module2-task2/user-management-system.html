@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Add User Section -->
+    <h2>Add User</h2>
+
+    <div class="form-row">
+        <div class="field">
+            <label>Name:</label>
+            <input type="text" id="name" placeholder="Enter name" />
+        </div>
+
+        <div class="field">
+            <label>Email:</label>
+            <input type="email" id="email" placeholder="Enter email" />
+        </div>
+
+        <div class="field">
+            <label>Role:</label>
+            <select id="role">
+                <option>Admin</option>
+                <option>User</option>
+                <option>Manager</option>
+            </select>
+        </div>
+
+        <!-- IMPORTANT -->
+        <button type="button" class="btn primary" id="addUserBtn">
+            Add User
+        </button>
+    </div>
+
+    <!-- User List -->
+    <div id="userListSection" class="hidden">
+        <h2>User List</h2>
+
+        <div class="user-row header">
+            <span>User Name</span>
+            <span>Email</span>
+            <span>Role</span>
+            <span>Actions</span>
+        </div>
+
+        <div id="userList"></div>
+    </div>
+
+</div>
+
+<script src="dist/app.js"></script>
+</body>
+</html>
