@@ -1,4 +1,4 @@
-const Defaultquestions = {
+window.Defaultquestions = {
   HTML: [
     {
       question: "HTML stands for?",
