@@ -35,7 +35,7 @@ function login() {
 
 
     // Redirect based on role
-    if (user.role === "Admin") {
+    if (user.email === "admin@gmail.com") {
         window.location.href = "Admin/index.html";
     } else {
         window.location.href = "User/index.html";
