@@ -11,7 +11,13 @@ const course = localStorage.getItem("course");
 const username = currentUser.name;
 
 // Load questions added by Admin
-const questions = JSON.parse(localStorage.getItem("questions")) || Defaultquestions;
+const storedQuestions = JSON.parse(localStorage.getItem("questions"));
+
+const questions =
+  storedQuestions && Object.keys(storedQuestions).length > 0
+    ? storedQuestions
+    : window.Defaultquestions;
+
 
 
 
