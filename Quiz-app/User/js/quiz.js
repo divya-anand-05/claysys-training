@@ -11,12 +11,9 @@ const course = localStorage.getItem("course");
 const username = currentUser.name;
 
 // Load questions added by Admin
-const Adminquestions = JSON.parse(localStorage.getItem("questions")) || {};
+const questions = JSON.parse(localStorage.getItem("questions")) || Defaultquestions;
 
-const questions = {
-  ...Defaultquestions,
-  ...adminQuestions
-};
+
 
 // Header display
 document.getElementById("courseName").textContent = course;
