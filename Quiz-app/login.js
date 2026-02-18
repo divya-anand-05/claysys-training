@@ -1,7 +1,7 @@
 
 if (!localStorage.getItem("users")) {
     const users = [
-        { id: 1, name: "Admin", email: "admin@example.com", password: "12345", role: "Admin" }
+        { id: 1, name: "Admin", email: "admin@gmail.com", password: "12345", role: "Admin" }
     ];
     localStorage.setItem("users", JSON.stringify(users));
 }
@@ -35,7 +35,7 @@ function login() {
 
 
     // Redirect based on role
-    if (user.role === "Admin") {
+    if (user.email === "admin@gmail.com") {
         window.location.href = "Admin/index.html";
     } else {
         window.location.href = "User/index.html";
