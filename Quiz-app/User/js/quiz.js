@@ -28,10 +28,10 @@ const optionsEl = document.getElementById("options");
 const nextBtn = document.getElementById("nextBtn");
 
 // prevent blank quiz
-if (!questions[course] || questions[course].length === 0) {
-    alert("No questions available for this course yet!");
-    window.location.href = "index.html";
-}
+// if (!questions[course] || questions[course].length === 0) {
+//     alert("No questions available for this course yet!");
+//     window.location.href = "index.html";
+// }
 
 
 // progress bar
