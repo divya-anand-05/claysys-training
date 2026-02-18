@@ -1,7 +1,7 @@
 
 if (!localStorage.getItem("users")) {
     const users = [
-        { id: 1, name: "Admin", email: "admin@example.com", password: "12345", role: "Admin" }
+        { id: 1, name: "Admin", email: "admin@gmail.com", password: "12345", role: "Admin" }
     ];
     localStorage.setItem("users", JSON.stringify(users));
 }
