@@ -1,0 +1,468 @@
+body{
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg,#f5f7fa,#787876);
+    color:#222;
+    transition: background 0.5s ease, color 0.3s ease;
+    margin: 0;
+}
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* Dark mode */
+/* 🌙 Dark Background */
+body.dark {
+    background: #1e1e1e;
+    color: #e5e7eb;
+}
+
+/* Container */
+body.dark .container {
+    background: #2c2c2c;
+    box-shadow: 0 0 25px rgba(0,0,0,0.6);
+}
+
+/* Title & subtitle */
+body.dark .title {
+    color: #4fc3f7;
+}
+
+body.dark .subtitle {
+    color: #cbd5e1;
+}
+
+/* Input */
+body.dark input {
+    background: #1f2933;
+    color: #e5e7eb;
+    border: 1px solid #374151;
+}
+
+body.dark input::placeholder {
+    color: #94a3b8;
+}
+
+/* Theme toggle */
+body.dark .theme-toggle {
+    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+    transform: rotate(180deg);
+}
+
+/* recent quizz table */
+body.dark .recent-quizzes h3 {
+    color: #eaeaea;
+}
+
+body.dark .recent-quizzes table {
+    background: #1f1f1f;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+body.dark .recent-quizzes thead {
+    background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+}
+
+body.dark .recent-quizzes th {
+    color: #ffffff;
+}
+
+body.dark .recent-quizzes td {
+    color: #e0e0e0;
+    border-bottom: 1px solid #333;
+}
+
+body.dark .recent-quizzes tbody tr:hover {
+    background: #2a2a2a;
+}
+
+body.dark .recent-quizzes td[colspan] {
+    color: #aaa;
+}
+
+
+
+/* Course cards */
+body.dark .course-card {
+    background:  #3a3a3a;
+    border-color: #4fc3f7;
+    color: #e5e7eb;
+}
+
+body.dark .course-card i {
+    color: #4fc3f7;
+}
+
+/* Hover & selected */
+body.dark .course-card:hover,
+body.dark .course-card.selected {
+    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+    color: #ffffff;
+}
+
+body.dark .course-card:hover i,
+body.dark .course-card.selected i {
+    color: #ffffff;
+}
+
+/* Button */
+body.dark button {
+    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+}
+
+body.dark button:hover {
+    background: linear-gradient(135deg, #5b86e5, #36d1dc);
+}
+
+/* Error message */
+body.dark #error {
+    color: #f87171;
+}
+
+/* Smooth transitions */
+body,
+.container,
+.course-card,
+button,
+input {
+    transition: all 0.3s ease;
+}
+
+
+
+/* Light theme */
+.container{
+    background: rgba(255,255,255,0.9);
+    max-width: 1000px;
+    margin:50px auto;
+    padding: 30px;
+    border-radius: 14px;
+    text-align: center;
+    transition: background 0.3s ease;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.topbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.theme-toggle{
+
+    padding: 8px 14px;
+    border:none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background:#209ae0;
+    color:white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.theme-toggle {
+    background: linear-gradient(135deg, #209ae0, #6dd5fa);
+    transition: transform 0.4s ease;
+}
+.theme-toggle i {
+    font-size: 20px;
+    display: flex;
+     justify-content: center;
+    align-items: center;
+    transition: transform 0.4s ease;
+}
+
+.theme-toggle:hover{
+    transform: scale(1.1);
+}
+
+.logOutBtn{
+     padding:10px 25px;
+     background: linear-gradient(135deg, #209ae0, #6dd5fa);
+    color:white;
+    border:none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius:5px;
+    transition: transform 0.4s ease;
+    gap:20px;
+}
+.title{
+    color:#209ae0;
+}
+
+.subtitle{
+    color:#555;
+}
+
+input{
+    width:80%;
+    padding: 10px;
+    margin:15px 0;
+    border-radius: 10px;
+    font-size:16px;
+     transition: transform 0.4s ease;
+}
+input:hover{
+ transform: scale(1.1);
+
+}
+
+/* Recent Quiz Table */
+.recent-quizzes {
+    margin-top: 20px;
+}
+
+.recent-quizzes h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+/* Table */
+.recent-quizzes table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* Header */
+.recent-quizzes thead {
+    background: linear-gradient(135deg, #209ae0, #6dd5fa);
+}
+
+.recent-quizzes th {
+    padding: 12px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Body */
+.recent-quizzes td {
+    padding: 10px;
+    text-align: center;
+    color: #333;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+/* Hover row */
+.recent-quizzes tbody tr:hover {
+    background: #f3f9ff;
+}
+
+/* No recent quizzes text */
+.recent-quizzes td[colspan] {
+    font-style: italic;
+    color: #777;
+}
+
+
+.category-title {
+    margin: 30px 0 15px;
+    color: #209ae0;
+    font-size: 26px;
+}
+
+
+.course-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:15px;
+    margin:20px 0;
+}
+
+.course-card{
+    padding: 15px;
+    border:2px solid #209ae0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition:
+       transform 0.25s ease,
+       box-shadow 0.25s ease,
+       background-color 0.25s ease,
+       color 0.25s ease;
+    text-align: center;
+    background:linear-gradient(135deg,#ffffff,#eef2f3);
+    min-height: 120px;
+}
+
+.course-card:hover{
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(32,154,224,0.25);
+}
+
+.course-card:hover,
+.course-card.selected {
+    background: linear-gradient(135deg, #209ae0, #6dd5fa);
+    color: white;
+}
+
+.course-card.selected{
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(32, 154, 224, 0.35);
+}
+
+.course-card i{
+    font-size: 50px;
+    margin-bottom: 10px;
+    color:#209ae0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.course-card:hover i,
+.course-card.selected i{
+    transform: scale(1.2) rotate(5deg);
+    color:white;
+}
+
+.course-card p {
+    opacity: 0.7;
+    transform: translateY(6px);
+    transition: all 0.35s ease;
+}
+
+.course-card:hover p,
+.course-card.selected p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.container button:not(.logOutBtn,.theme-toggle){
+    padding:10px 25px;
+     background: linear-gradient(135deg, #209ae0, #6dd5fa);
+    color:white;
+    border:none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius:5px;
+    transition: transform 0.4s ease;
+}
+
+button:hover{
+    background: linear-gradient(135deg, #6dd5fa, #209ae0);
+    transform: scale(1.1);
+}
+
+#error{
+    color:red;
+    margin-top: 10px;
+}
+
+/* For Quiz Page */
+
+
+
+
+
+
+
+
+/* Responsive */
+
+@media(max-width:900px){
+    .course-grid{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .theme-toggle {
+        top: 58px;
+        right: 50px;
+        width: 34px;
+        height: 34px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    body {
+        background: #f4f6f8;
+        background-attachment: fixed;
+    }
+
+    .container {
+        width: 90%;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+     .theme-toggle {
+        top: 28px;
+        right: 14px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .course-grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+     .course-card:hover {
+        transform: scale(1.02);
+    }
+
+    .course-card.selected {
+        transform: scale(1.03);
+    }
+
+    .course-card i{
+        font-size: 32px;
+    }
+
+    /* Header (course & username) */
+    .quiz-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        font-size: 14px;
+    }
+
+     .progress-container {
+        height: 8px;
+    }
+
+    .progress-text {
+        font-size: 12px;
+    }
+
+    /* Question text */
+    #question {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    /* Options buttons */
+    .option-btn {
+        font-size: 15px;
+        padding: 14px;
+    }
+
+    /* All main buttons */
+    button,
+    #nextBtn,
+    .secondary-btn {
+        font-size: 15px;
+        padding: 14px;
+    }
+
+    /* Result buttons stack */
+    .result-buttons {
+        flex-direction: column;
+    }
+
+    /* Leaderboard table mobile fix */
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}

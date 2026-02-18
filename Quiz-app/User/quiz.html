@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Page</title>
+    <style>
+
+        body{
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg,#f5f7fa,#787876);
+    color:#222;
+    transition: background 0.5s ease, color 0.3s ease;
+    margin: 0;
+}
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container{
+    background: rgba(255,255,255,0.9);
+    max-width: 1000px;
+    margin:50px auto;
+    padding: 30px;
+    border-radius: 14px;
+    text-align: center;
+    transition: background 0.3s ease;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+        .quiz-header{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color:#209ae0;
+    margin-bottom: 20px;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background: linear-gradient(135deg,#209ae0,#6dd5fa);
+    transition: width 0.4s ease;
+    border-radius: 20px;
+}
+
+.progress-text{
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+#question{
+    font-size:20px;
+    margin-bottom: 20px;
+    color:#333;
+}
+
+#options{
+    display: flex;
+    flex-direction: column;
+    gap:12px;
+}
+
+.option-btn{
+    padding: 12px;
+    font-size: 16px;
+    background: #f4f6f8;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    color:#333;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.option-btn:hover{
+    background: #209ae0;
+    color:white;
+}
+.option-btn.selected{
+    background: #209ae0;
+    color:#ffffff;
+    border-color: #209ae0;
+}
+
+.option-btn.correct {
+    background: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+.option-btn.wrong {
+    background: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+.option-btn.disabled {
+    pointer-events: none;
+    opacity: 0.8;
+}
+#nextBtn:disabled {
+    background: #b0cfe8;
+    cursor: not-allowed;
+}
+
+#nextBtn{
+    margin-top: 25px;
+    width:100%;
+    padding: 12px;
+    background: #209ae0;
+    color:#ffffff;
+    font-size: 16px;
+    border:none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#nextBtn:hover{
+    background: #167bb5;
+}
+
+#progress{
+    color:#666;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.timer{
+    text-align: right;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color:#209ae0;
+}
+.time-up{
+    color: #dc3545;
+    font-size:30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    display: none;
+    animation: fadeInOut 1s ease;
+}
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* dark theme Quiz page */
+/* Header */
+body.dark .quiz-header {
+    color: #4fc3f7;
+}
+body.dark .container{
+    background:#2c2c2c;
+}
+
+/* Progress bar */
+body.dark .progress-container {
+    background: rgba(255,255,255,0.15);
+}
+
+body.dark .progress-bar {
+    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+}
+
+body.dark .progress-text {
+    color: #cbd5e1;
+}
+
+/* Question */
+body.dark #question {
+    color: #f1f5f9;
+}
+
+/* Options */
+body.dark .option-btn {
+    background: #1f2933;
+    border-color: #374151;
+    color: #e5e7eb;
+}
+
+body.dark .option-btn:hover {
+    background: #334155;
+    color: #ffffff;
+}
+
+body.dark .option-btn.selected {
+    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+    border-color: #36d1dc;
+}
+
+/* Correct / Wrong */
+body.dark .option-btn.correct {
+    background: #22c55e;
+    border-color: #22c55e;
+}
+
+body.dark .option-btn.wrong {
+    background: #ef4444;
+    border-color: #ef4444;
+}
+
+/* Disabled */
+body.dark .option-btn.disabled {
+    opacity: 0.85;
+}
+
+/* Next Button */
+body.dark #nextBtn {
+    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+}
+
+body.dark #nextBtn:hover {
+    background: linear-gradient(135deg, #5b86e5, #36d1dc);
+}
+
+body.dark #nextBtn:disabled {
+    background: #475569;
+    cursor: not-allowed;
+}
+
+/* Timer */
+body.dark .timer {
+    color: #38bdf8;
+}
+
+/* Time up message */
+body.dark .time-up {
+    color: #f87171;
+}
+
+/* Smooth transition */
+body, .option-btn, #nextBtn, .progress-bar {
+    transition: all 0.3s ease;
+}
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- Header -->
+    <div class="quiz-header">
+        <span id="courseName"></span>
+        <span id="userName"></span>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress-container" aria-label="Quiz Progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <p class="progress-text" id="progressText" aria-live="polite">Question 1 of 10</p>
+
+    <!-- Question -->
+    <h2 id="question"></h2>
+
+    <!-- Timer -->
+    <div class="timer" aria-live="polite">
+        <span id="time">15</span>
+    </div>
+    <p id="timeUpMsg" class="time-up" role="alert">Time’s up!</p>
+
+    <!-- Options -->
+    <div id="options" role="radiogroup" aria-label="Answer Options"></div>
+
+    <!-- Next Button -->
+    <button id="nextBtn">Next</button>
+    
+</div>
+
+
+
+
+<script src="js/data.js" defer></script>
+<script src="js/quiz.js" defer></script>
+<script src="js/theme.js" defer></script>
+
+</body>
+</html>

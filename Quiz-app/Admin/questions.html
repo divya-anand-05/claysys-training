@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Questions</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <button onclick="goBack()" aria-label="Back to Admin Dashboard">Back to Dashboard</button>
+        <h1>Manage Questions</h1>
+
+        <div class="course-selection">
+            <h3>Select Course / Language</h3>
+            <select id="courseSelect" onchange="selectCourse(this.value)">
+                <option value="">--Select Course--</option>
+                <optgroup label="Frontend">
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="React">React</option>
+                    <option value="Angular">Angular</option>
+                    <option value="Vue.js">Vue.js</option>
+                </optgroup>
+                <optgroup label="Backend">
+                    <option value="C#">C#</option>
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                </optgroup>
+                <optgroup label="Database">
+                    <option value="SQL">SQL</option>
+                    <option value="MySQL">MySQL</option>
+                    <option value="MongoDB">MongoDB</option>
+                </optgroup>
+        
+            </select>
+        </div>
+
+        <h3 id="selectedCourseTitle"></h3>
+
+        <!-- Question Management -->
+        <section id="questionsSection">
+            <h2>Add Question</h2>
+            <input id="question" placeholder="Question" aria-required="true">
+            <input id="opt1" placeholder="Option 1" aria-required="true">
+            <input id="opt2" placeholder="Option 2" aria-required="true">
+            <input id="opt3" placeholder="Option 3" aria-required="true">
+            <input id="opt4" placeholder="Option 4" aria-required="true">
+            <input id="answer" placeholder="Correct Answer">
+            <button class="addBtn" onclick="addQuestion()" aria-label="Add  or Update Question">Add Question</button>
+            <ul id="questionList" aria-live="polite"></ul>
+        </section>
+    </div>
+
+    <script src="questions.js" defer></script>
+    <script src="../User/js/theme.js" defer></script>
+</body>
+</html>

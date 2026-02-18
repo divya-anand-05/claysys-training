@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+    * {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-height: 400px;
+    overflow-y: auto;
+    max-width: 800px;
+    background: white;
+     margin-bottom: 20px;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.6s ease;
+}
+
+/* Heading */
+.container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #209ae0;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+
+thead {
+    background: linear-gradient(135deg, #209ae0, #6dd5fa);
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+tbody tr {
+    transition: background 0.3s;
+}
+
+tbody tr:nth-child(even) {
+    background: #f4f8fb;
+}
+
+tbody tr:hover {
+    background: #eaf4ff;
+}
+
+/* Rank highlight */
+tbody tr:first-child {
+    background: #fff3cd;
+    font-weight: bold;
+}
+
+/* Button */
+.backBtn {
+    width: 100%;
+    padding: 12px;
+    background: #209ae0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.backBtn:hover {
+    background: #167dc2;
+}
+
+.gold {
+    color: #FFD700;
+    font-size: 22px;
+}
+
+.silver {
+    color: #C0C0C0;
+    font-size: 22px;
+}
+
+.bronze {
+    color: #CD7F32;
+    font-size: 22px;
+}
+
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    th, td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .container {
+        padding: 18px;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dark mode theme */
+/* 🌙 Dark Theme */
+body.dark {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* Container */
+body.dark .container {
+    background: #1f2933;
+    color: #e5e7eb;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+/* Heading */
+body.dark .container h1 {
+    color: #4fc3f7;
+}
+
+/* Table */
+body.dark table {
+    color: #e5e7eb;
+}
+
+body.dark thead {
+    background: linear-gradient(135deg, #141e30, #243b55);
+}
+
+body.dark th {
+    color: #ffffff;
+}
+
+/* Table rows */
+body.dark tbody tr:nth-child(even) {
+    background: #263445;
+}
+
+body.dark tbody tr:hover {
+    background: #33485c;
+}
+
+/* Rank 1 highlight */
+body.dark tbody tr:first-child {
+    background: rgba(255, 215, 0, 0.15);
+    font-weight: bold;
+}
+
+/* Buttons */
+body.dark .backBtn {
+    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+}
+
+body.dark .backBtn:hover {
+    background: linear-gradient(135deg, #5b86e5, #36d1dc);
+}
+
+/* Medal glow */
+body.dark .gold {
+    color: #FFD700;
+    text-shadow: 0 0 8px rgba(255,215,0,0.7);
+}
+
+body.dark .silver {
+    color: #C0C0C0;
+    text-shadow: 0 0 8px rgba(192,192,192,0.6);
+}
+
+body.dark .bronze {
+    color: #CD7F32;
+    text-shadow: 0 0 8px rgba(205,127,50,0.6);
+}
+
+</style>
+<body>
+    <div class = "container">
+        <h1>Leaderboard</h1>
+
+    <table id="leaderboardTable" role="table" aria-label="Leaderboard of quiz scores">
+            <thead>
+                <tr>
+                    <th scope="col">Rank</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Course</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboardBody" aria-live="polite">
+            </tbody>
+        </table>
+
+        <button id="homeBtn" class="backBtn" aria-label="Back to Home" onclick="window.location.href='index.html'">
+            Back to Home
+        </button>
+    </div>
+    <script src = "js/leaderboard.js" defer></script>
+    <script src="js/theme.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="topbar">
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <button class="logOutBtn" onclick="logout()" aria-label="Logout">Logout</button>
+        </div>
+
+        <h1 class="title">Quiz Application</h1>
+        <p class="subtitle">Select a course and enter your name</p>
+
+        <!-- Name input -->
+        <input type="text" id="username" placeholder="Enter your name" aria-label="Enter your name" aria-required="true" />
+
+        <div class="recent-quizzes">
+        <h3>Recent Quizzes</h3>
+        <table border="1" width="100%">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Course</th>
+              <th scope="col">Score</th>
+              <th scope="col">Date</th>
+            </tr>
+          </thead>
+          <tbody id="recentQuizBody" aria-live="polite"></tbody>
+        </table>
+        </div>
+
+        <h3 class="category-title">Frontend</h3>
+        <div class="course-grid">
+            <div class="course-card" data-course="JavaScript" role="button" tabindex="0" aria-pressed="false">
+                <i class="fa-brands fa-js"></i>
+                <h3>JavaScript</h3>
+                <p>Test your Js basics</p>
+            </div>
+
+            <div class="course-card" data-course="HTML" role="button" tabindex="0" aria-pressed="false">
+                <i class="fa-brands fa-html5"></i>
+                <h3>HTML</h3>
+                <p>Check your HTML knowledge</p>
+            </div>
+
+            <div class="course-card" data-course="CSS" role="button" tabindex="0" aria-pressed="false">
+                <i class="fa-brands fa-css3-alt"></i>
+                <h3>CSS</h3>
+                <p>Style like a pro</p>
+            </div>
+
+            <div class="course-card" data-course="React" role="button" tabindex="0" aria-pressed="false">
+                <i class="fa-brands fa-react"></i>
+                <h3>React</h3>
+                <p>Build and test React concepts</p>
+            </div>
+
+            <div class="course-card" data-course="Angular" role="button" tabindex="0" aria-pressed="false">
+                <i class="fa-brands fa-angular"></i>
+                <h3>Angular</h3>
+                <p>Explore Angular framework skills</p>
+            </div>
+
+            <div class="course-card" data-course="Vue.js" role="button" tabindex="0" aria-pressed="false">
+                <i class="fa-brands fa-vuejs"></i>
+                <h3>Vue.js</h3>
+                <p>Check your Vue.js understanding</p>
+            </div>
+        </div>
+
+        <h3 class="category-title">Backend</h3>
+        <div class="course-grid">
+            <div class="course-card" data-course="C#" role="button" tabindex="0" aria-pressed="false">
+                <i class="fa-solid fa-hashtag"></i>
+                <h3>C#</h3>
+                <p>Test your C# programming skills</p>
+            </div>
+            <div class="course-card" data-course="Java" role="button" tabindex="0" aria-pressed="false">
+                <i class="fa-brands fa-java"></i>
+                <h3>Java</h3>
+                <p>Challenge your Java backend concepts</p>
+            </div>
+            <div class="course-card" data-course="Python" role="button" tabindex="0" aria-pressed="false">
+                <i class="fa-brands fa-python"></i>
+                <h3>Python</h3>
+                <p>Test your Python problem-solving</p>
+            </div>
+        </div>
+
+        <h3 class="category-title">Database</h3>
+        <div class="course-grid">
+            <div class="course-card" data-course="SQL" role="button" tabindex="0" aria-pressed="false">
+                <i class="fa-solid fa-database"></i>
+                <h3>SQL</h3>
+                <p>Test your SQL query skills</p>
+            </div>
+            <div class="course-card" data-course="MySQL" role="button" tabindex="0" aria-pressed="false">
+                <i class="fa-solid fa-database"></i>
+                <h3>MySQL</h3>
+                <p>Practice MySQL database concepts</p>
+            </div>
+            <div class="course-card" data-course="MongoDB" role="button" tabindex="0" aria-pressed="false">
+                <i class="fa-solid fa-leaf"></i>
+                <h3>MongoDB</h3>
+                <p>Explore MongoDB NoSQL knowledge</p>
+            </div>
+        </div>
+
+        <!-- Error -->
+        <p id="error" role="alert" aria-live="assertive"></p>
+
+        <!-- Start Button -->
+        <button id="startBtn">Start Quiz</button>
+    </div>
+
+    <script src="js/user.js" defer></script>
+    <script src="js/theme.js" defer></script>
+</body>
+
+</html>

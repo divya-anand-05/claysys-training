@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <div class="admin-container">
+          <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark/Light Theme">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+        <h1>Admin Dashboard</h1>
+
+        <div class="admin-menu" role="navigation" aria-label="Admin menu">
+            <button onclick="window.location.href='questions.html'" aria-label="Manage Questions">Manage Questions</button>
+            <button onclick="window.location.href='leaderboard.html'" aria-label="View Leaderboard">Leaderboard</button>
+        </div>
+
+       <div class="dashboard-overview" aria-label="Dashboard Overview">
+  <div class="stat-card" role="status" aria-live="polite">Total Questions: <span id="totalQuestions">0</span></div>
+  <div class="stat-card" role="status" aria-live="polite">Total Users: <span id="totalUsers">0</span></div>
+  <div class="stat-card" role="status" aria-live="polite">Total Leaderboard Entries: <span id="totalScores">0</span></div>
+</div>
+
+<footer style="margin-top:40px;text-align:center;">
+    <button onclick="logout()" aria-label="Logout Admin">Logout</button>
+</footer>
+
+
+    <script src="admin.js" defer></script>
+    <script src="../User/js/theme.js" defer></script>
+
+
+</body>
+
+</html>
