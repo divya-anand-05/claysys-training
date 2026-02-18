@@ -8,6 +8,9 @@ if (!currentUser) {
 
 // Get stored values
 const course = localStorage.getItem("course");
+if (course) {
+  course = course.trim();
+}
 const username = currentUser.name;
 
 // Load questions added by Admin
