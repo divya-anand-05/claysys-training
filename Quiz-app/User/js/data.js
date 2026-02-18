@@ -1,92 +1,33 @@
-window.Defaultquestions = {
-  HTML: [
-    {
-      question: "HTML stands for?",
-      options: [
-        "Hyper Text Markup Language",
-        "High Text Machine Language",
-        "Hyperlinks Text Mark Language",
-        "None"
-      ],
-      answer: "Hyper Text Markup Language"
-    },
-    {
-      question: "Which tag is used for headings?",
-      options: ["<p>", "<h1>", "<div>", "<span>"],
-      answer: "<h1>"
-    },
-    {
-      question: "Which tag creates a hyperlink?",
-      options: ["<link>", "<a>", "<href>", "<url>"],
-      answer: "<a>"
-    },
-    {
-      question: "Which attribute is used for images?",
-      options: ["src", "href", "link", "path"],
-      answer: "src"
-    },
-    {
-      question: "HTML is a ___ language?",
-      options: ["Programming", "Scripting", "Markup", "Query"],
-      answer: "Markup"
-    }
-  ],
+ const Defaultquestions = {
+    HTML: [
+        {
+            question: "HTML stands for?",
+            options: [
+                "Hyper Text Markup Language",
+                "Hight Text Markup Language",
+                "Hyperlinks and Text Markup Language",
+                "None"
+            ],
 
-  CSS: [
-    {
-      question: "Which property changes text color?",
-      options: ["color", "font-color", "text-color", "bgcolor"],
-      answer: "color"
-    },
-    {
-      question: "Which symbol is used for class selector?",
-      options: [".", "#", "*", "&"],
-      answer: "."
-    },
-    {
-      question: "Which property controls spacing inside an element?",
-      options: ["margin", "padding", "border", "gap"],
-      answer: "padding"
-    },
-    {
-      question: "Which CSS makes layout flexible?",
-      options: ["float", "flexbox", "position", "inline"],
-      answer: "flexbox"
-    },
-    {
-      question: "Which property hides overflow content?",
-      options: ["display", "overflow", "visibility", "hidden"],
-      answer: "overflow"
-    }
-  ],
+            answer: "Hyper Text Markup language"
+        }
+    ],
 
-  JavaScript: [
-    {
-      question: "Which keyword declares a variable?",
-      options: ["var", "init", "string", "float"],
-      answer: "var"
-    },
-    {
-      question: "Which symbol is used for strict equality?",
-      options: ["==", "=", "===", "!="],
-      answer: "==="
-    },
-    {
-      question: "Which method converts JSON to object?",
-      options: ["JSON.parse()", "JSON.stringify()", "parseJSON()", "toJSON()"],
-      answer: "JSON.parse()"
-    },
-    {
-      question: "Which keyword defines a function?",
-      options: ["func", "method", "function", "define"],
-      answer: "function"
-    },
-    {
-      question: "Which loop runs at least once?",
-      options: ["for", "while", "do-while", "foreach"],
-      answer: "do-while"
-    }
-  ],
+    CSS: [
+        {
+            question: "Which property is used for text color?",
+            options:["color","font-color","text-color","bgcolor"],
+            answer: "color"
+        }
+    ],
+
+    JavaScript: [
+        {
+            question: "Which keyword declares a variable?",
+            options: ["var", "init", "string", "float"],
+            answer: "var"
+        }
+    ],
 
   React: [
     {
