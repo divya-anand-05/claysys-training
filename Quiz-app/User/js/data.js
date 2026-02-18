@@ -144,7 +144,7 @@ const Defaultquestions = {
     }
   ],
 
-  Vue: [
+  Vue.js: [
     {
       question: "Vue is created by?",
       options: ["Evan You", "Dan Abramov", "Brendan Eich", "Mark Zuckerberg"],
@@ -172,7 +172,7 @@ const Defaultquestions = {
     }
   ],
 
-  CSharp: [
+  C#: [
     {
       question: "C# is developed by?",
       options: ["Google", "Microsoft", "Apple", "IBM"],
@@ -288,6 +288,40 @@ const Defaultquestions = {
       answer: "DROP"
     }
   ],
+
+    MySQL: [
+    {
+      question: "MySQL is a ___?",
+      options: ["Programming Language", "Database", "Operating System", "Web Server"],
+      answer: "Database"
+    },
+    {
+      question: "MySQL is mainly used for?",
+      options: [
+        "Storing and managing data",
+        "Designing UI",
+        "Running Java code",
+        "Creating animations"
+      ],
+      answer: "Storing and managing data"
+    },
+    {
+      question: "Which command is used to create a database?",
+      options: ["MAKE DATABASE", "CREATE DATABASE", "ADD DATABASE", "NEW DATABASE"],
+      answer: "CREATE DATABASE"
+    },
+    {
+      question: "Which keyword is used to retrieve data?",
+      options: ["FETCH", "SELECT", "GET", "READ"],
+      answer: "SELECT"
+    },
+    {
+      question: "Which engine is default in MySQL?",
+      options: ["MyISAM", "InnoDB", "MongoEngine", "Postgres"],
+      answer: "InnoDB"
+    }
+  ],
+
 
   MongoDB: [
     {
