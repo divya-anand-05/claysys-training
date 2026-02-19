@@ -7,7 +7,7 @@ if (!currentUser) {
 
 
 // Get stored values
-const course = localStorage.getItem("course");
+let course = localStorage.getItem("course");
 if (course) {
   course = course.trim();
 }
