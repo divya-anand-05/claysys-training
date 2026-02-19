@@ -1,4 +1,5 @@
  const Defaultquestions = {
+<<<<<<< HEAD
   HTML: [
     {
       question: "HTML stands for?",
@@ -31,62 +32,37 @@
       answer: "Markup"
     }
   ],
+=======
+    HTML: [
+        {
+            question: "HTML stands for?",
+            options: [
+                "Hyper Text Markup Language",
+                "Hight Text Markup Language",
+                "Hyperlinks and Text Markup Language",
+                "None"
+            ],
+>>>>>>> 9cc9f593d90c54ac5133e49388cfbacc05a6ce51
 
-  CSS: [
-    {
-      question: "Which property changes text color?",
-      options: ["color", "font-color", "text-color", "bgcolor"],
-      answer: "color"
-    },
-    {
-      question: "Which symbol is used for class selector?",
-      options: [".", "#", "*", "&"],
-      answer: "."
-    },
-    {
-      question: "Which property controls spacing inside an element?",
-      options: ["margin", "padding", "border", "gap"],
-      answer: "padding"
-    },
-    {
-      question: "Which CSS makes layout flexible?",
-      options: ["float", "flexbox", "position", "inline"],
-      answer: "flexbox"
-    },
-    {
-      question: "Which property hides overflow content?",
-      options: ["display", "overflow", "visibility", "hidden"],
-      answer: "overflow"
-    }
-  ],
+            answer: "Hyper Text Markup language"
+        }
+    ],
 
-  JavaScript: [
-    {
-      question: "Which keyword declares a variable?",
-      options: ["var", "init", "string", "float"],
-      answer: "var"
-    },
-    {
-      question: "Which symbol is used for strict equality?",
-      options: ["==", "=", "===", "!="],
-      answer: "==="
-    },
-    {
-      question: "Which method converts JSON to object?",
-      options: ["JSON.parse()", "JSON.stringify()", "parseJSON()", "toJSON()"],
-      answer: "JSON.parse()"
-    },
-    {
-      question: "Which keyword defines a function?",
-      options: ["func", "method", "function", "define"],
-      answer: "function"
-    },
-    {
-      question: "Which loop runs at least once?",
-      options: ["for", "while", "do-while", "foreach"],
-      answer: "do-while"
-    }
-  ],
+    CSS: [
+        {
+            question: "Which property is used for text color?",
+            options:["color","font-color","text-color","bgcolor"],
+            answer: "color"
+        }
+    ],
+
+    JavaScript: [
+        {
+            question: "Which keyword declares a variable?",
+            options: ["var", "init", "string", "float"],
+            answer: "var"
+        }
+    ],
 
   React: [
     {
@@ -288,6 +264,40 @@
       answer: "DROP"
     }
   ],
+
+    MySQL: [
+    {
+      question: "MySQL is a ___?",
+      options: ["Programming Language", "Database", "Operating System", "Web Server"],
+      answer: "Database"
+    },
+    {
+      question: "MySQL is mainly used for?",
+      options: [
+        "Storing and managing data",
+        "Designing UI",
+        "Running Java code",
+        "Creating animations"
+      ],
+      answer: "Storing and managing data"
+    },
+    {
+      question: "Which command is used to create a database?",
+      options: ["MAKE DATABASE", "CREATE DATABASE", "ADD DATABASE", "NEW DATABASE"],
+      answer: "CREATE DATABASE"
+    },
+    {
+      question: "Which keyword is used to retrieve data?",
+      options: ["FETCH", "SELECT", "GET", "READ"],
+      answer: "SELECT"
+    },
+    {
+      question: "Which engine is default in MySQL?",
+      options: ["MyISAM", "InnoDB", "MongoEngine", "Postgres"],
+      answer: "InnoDB"
+    }
+  ],
+
 
   MongoDB: [
     {

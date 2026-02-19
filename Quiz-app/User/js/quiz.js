@@ -1,3 +1,4 @@
+
 const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
 if (!currentUser) {
@@ -42,10 +43,17 @@ const optionsEl = document.getElementById("options");
 const nextBtn = document.getElementById("nextBtn");
 
 // prevent blank quiz
+<<<<<<< HEAD
 // if (!questions[course] || questions[course].length === 0) {
 //     alert("No questions available for this course yet!");
 //     window.location.href = "index.html";
 // }
+=======
+ if (!questions[course] || questions[course].length === 0) {
+    alert("No questions available for this course yet!");
+    window.location.href = "index.html";
+ }
+>>>>>>> 9cc9f593d90c54ac5133e49388cfbacc05a6ce51
 
 
 // progress bar
