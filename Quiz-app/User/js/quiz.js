@@ -1,3 +1,4 @@
+
 const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
 if (!currentUser) {
@@ -10,6 +11,24 @@ if (!currentUser) {
 let course = localStorage.getItem("course");
 if (course) {
   course = course.trim();
+    const map = {
+    html: "HTML",
+    css: "CSS",
+    js: "JavaScript",
+    javascript: "JavaScript",
+    react: "React",
+    angular: "Angular",
+    vue: "Vue.js",
+    "vue.js": "Vue.js",
+    csharp: "CSharp",
+    "c#": "CSharp",
+    java: "Java",
+    python: "Python",
+    sql: "SQL",
+    mysql: "MySQL",
+    mongodb: "MongoDB"
+  };
+    course = map[course.toLowerCase()] || course;
 }
 const username = currentUser.name;
 
