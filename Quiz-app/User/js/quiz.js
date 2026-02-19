@@ -25,7 +25,7 @@ if (adminQuestions.length === 0) {
 if (!questions[course] || questions[course].length === 0) {
     alert("No questions available for this course yet!");
     window.location.href = "index.html";
-    return;
+
 }
 
 // Header display
@@ -172,7 +172,6 @@ function loadQuestion(){
     if (!currentQuestion || !currentQuestion.question) {
         alert("Question data corrupted. Please re-add questions.");
         window.location.href = "index.html";
-        return;
     }
 
     //clear old options and create new 
