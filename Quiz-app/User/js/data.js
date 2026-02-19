@@ -34,19 +34,59 @@
 
     CSS: [
         {
-            question: "Which property is used for text color?",
-            options:["color","font-color","text-color","bgcolor"],
+            question: "Which property is used to change text color?",
+            options: ["color", "font-color", "text-color", "bgcolor"],
             answer: "color"
+        },
+        {
+            question: "Which CSS property controls text size?",
+            options: ["text-size", "font-style", "font-size", "size"],
+            answer: "font-size"
+        },
+        {
+            question: "Which property is used to change background color?",
+            options: ["color", "bg-color", "background-color", "background"],
+            answer: "background-color"
+        },
+        {
+            question: "Which CSS property adds space inside an element?",
+            options: ["margin", "spacing", "padding", "border"],
+            answer: "padding"
+        },
+        {
+            question: "Which property is used to make text bold?",
+            options: ["font-weight", "font-style", "text-bold", "bold"],
+            answer: "font-weight"
         }
     ],
 
-    JavaScript: [
-        {
-            question: "Which keyword declares a variable?",
-            options: ["var", "init", "string", "float"],
-            answer: "var"
-        }
-    ],
+   JavaScript: [
+    {
+        question: "Which keyword is used to declare a variable?",
+        options: ["var", "init", "string", "float"],
+        answer: "var"
+    },
+    {
+        question: "Which symbol is used for single-line comments?",
+        options: ["<!-- -->", "#", "//", "/* */"],
+        answer: "//"
+    },
+    {
+        question: "Which method prints output in the console?",
+        options: ["print()", "log()", "console.log()", "display()"],
+        answer: "console.log()"
+    },
+    {
+        question: "Which data type stores true or false?",
+        options: ["string", "number", "boolean", "array"],
+        answer: "boolean"
+    },
+    {
+        question: "Which operator is used to compare value and type?",
+        options: ["==", "=", "===", "!="],
+        answer: "==="
+    }
+]
 
   React: [
     {
