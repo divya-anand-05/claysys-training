@@ -8,40 +8,11 @@ if (!currentUser) {
 
 
 // Get stored values
-let course = localStorage.getItem("course");
-if (course) {
-  course = course.trim();
-    const map = {
-    html: "HTML",
-    css: "CSS",
-    js: "JavaScript",
-    javascript: "JavaScript",
-    react: "React",
-    angular: "Angular",
-    vue: "Vue.js",
-    "vue.js": "Vue.js",
-    csharp: "CSharp",
-    "c#": "CSharp",
-    java: "Java",
-    python: "Python",
-    sql: "SQL",
-    mysql: "MySQL",
-    mongodb: "MongoDB"
-  };
-    course = map[course.toLowerCase()] || course;
-}
+const course = localStorage.getItem("course");
 const username = currentUser.name;
 
 // Load questions added by Admin
-const storedQuestions = JSON.parse(localStorage.getItem("questions"));
-
-const questions =
-  storedQuestions && Object.keys(storedQuestions).length > 0
-    ? storedQuestions
-    : window.Defaultquestions;
-
-
-
+const questions = JSON.parse(localStorage.getItem("questions")) || Defaultquestions;
 
 // Header display
 document.getElementById("courseName").textContent = course;
