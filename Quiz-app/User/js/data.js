@@ -1,4 +1,4 @@
- window.Defaultquestions = {
+ const Defaultquestions = {
     HTML: [
         {
             question: "HTML stands for?",
