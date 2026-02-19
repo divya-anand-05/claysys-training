@@ -22,11 +22,11 @@ if (adminQuestions.length === 0) {
 }
 
 // Safety check
-// if (!questions[course] || questions[course].length === 0) {
-//     alert("No questions available for this course yet!");
-//     window.location.href = "index.html";
-//     return;
-// }
+if (!questions[course] || questions[course].length === 0) {
+    alert("No questions available for this course yet!");
+    window.location.href = "index.html";
+    return;
+}
 
 // Header display
 document.getElementById("courseName").textContent = course;
@@ -169,11 +169,11 @@ function loadQuestion(){
 
     const currentQuestion = questions[course][currentIndex];
 
-    // if (!currentQuestion || !currentQuestion.question) {
-    //     alert("Question data corrupted. Please re-add questions.");
-    //     window.location.href = "index.html";
-    //     return;
-    // }
+    if (!currentQuestion || !currentQuestion.question) {
+        alert("Question data corrupted. Please re-add questions.");
+        window.location.href = "index.html";
+        return;
+    }
 
     //clear old options and create new 
     questionEl.textContent = currentQuestion.question;
