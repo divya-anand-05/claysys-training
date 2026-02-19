@@ -16,9 +16,9 @@ let questions = JSON.parse(localStorage.getItem("questions")) || {};
 const adminQuestions = questions[course] || [];
 
 if (adminQuestions.length === 0) {
-    questions = Defaultquestions;  // Use your data.js defaults
+    questions = Defaultquestions;  
 } else {
-    questions = { [course]: adminQuestions };  // Keep admin structure
+    questions = { [course]: adminQuestions }; 
 }
 
 // Safety check
