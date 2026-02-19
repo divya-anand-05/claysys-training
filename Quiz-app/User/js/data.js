@@ -1,5 +1,4 @@
  const Defaultquestions = {
-<<<<<<< HEAD
   HTML: [
     {
       question: "HTML stands for?",
@@ -32,21 +31,6 @@
       answer: "Markup"
     }
   ],
-=======
-    HTML: [
-        {
-            question: "HTML stands for?",
-            options: [
-                "Hyper Text Markup Language",
-                "Hight Text Markup Language",
-                "Hyperlinks and Text Markup Language",
-                "None"
-            ],
->>>>>>> 9cc9f593d90c54ac5133e49388cfbacc05a6ce51
-
-            answer: "Hyper Text Markup language"
-        }
-    ],
 
     CSS: [
         {
