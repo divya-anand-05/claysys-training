@@ -20,9 +20,8 @@ if (leaderboardData.length === 0) {
     leaderboardData.forEach((item, index) => {
         const row = document.createElement("tr");
         
-          let medalHTML;
-          let medalLabel;
-    if (index === 0) medalHTML= '<i class="fa-solid fa-medal gold"></i>';
+          let medal;
+    if (index === 0) medal = '<i class="fa-solid fa-medal gold"></i>';
     else if (index === 1) medal = '<i class="fa-solid fa-medal silver"></i>';
     else if (index === 2) medal = '<i class="fa-solid fa-medal bronze"></i>';
     else medal = index + 1;
