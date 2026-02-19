@@ -57,7 +57,7 @@ document.addEventListener("keydown", (e) => {
 });
 
 // recent quiz history display
- const currentUser =JSON.parse(localStorage.getItem("currentUser"));
+const currentUser =JSON.parse(localStorage.getItem("currentUser"));
 const recentQuizBody = document.getElementById("recentQuizBody");
 
 if(!currentUser){

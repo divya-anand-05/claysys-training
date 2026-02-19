@@ -147,14 +147,14 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowDown") {
         e.preventDefault();
         currentFieldIndex =
-            (currentFieldIndex + 1) % fields.length;
+            (currentFieldIndex + 1) % fields.length;      // 1+1 %4---> 1
         highlightField();
     }
 
     if (e.key === "ArrowUp") {
         e.preventDefault();
         currentFieldIndex =
-            (currentFieldIndex - 1 + fields.length) % fields.length;
+            (currentFieldIndex - 1 + fields.length) % fields.length;  // 0-1+4 %4--->3
         highlightField();
     }
 

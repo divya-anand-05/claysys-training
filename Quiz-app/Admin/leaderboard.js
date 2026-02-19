@@ -34,7 +34,7 @@ function loadLeaderboard() {
         const tr = document.createElement("tr");
 
          tr.dataset.id = item.id;
-    tr.tabIndex = 0;
+        tr.tabIndex = 0;
          
 
         tr.innerHTML = `

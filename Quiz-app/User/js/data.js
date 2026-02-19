@@ -1,4 +1,4 @@
-const Defaultquestions = {
+ const Defaultquestions = {
   HTML: [
     {
       question: "HTML stands for?",
@@ -144,7 +144,7 @@ const Defaultquestions = {
     }
   ],
 
-  Vue: [
+  "Vue.js": [
     {
       question: "Vue is created by?",
       options: ["Evan You", "Dan Abramov", "Brendan Eich", "Mark Zuckerberg"],
@@ -172,7 +172,7 @@ const Defaultquestions = {
     }
   ],
 
-  CSharp: [
+  "C#": [
     {
       question: "C# is developed by?",
       options: ["Google", "Microsoft", "Apple", "IBM"],
