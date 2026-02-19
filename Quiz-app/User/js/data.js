@@ -85,7 +85,7 @@
     }
   ],
 
-  Vue.js: [
+  "Vue.js": [
     {
       question: "Vue is created by?",
       options: ["Evan You", "Dan Abramov", "Brendan Eich", "Mark Zuckerberg"],
@@ -113,7 +113,7 @@
     }
   ],
 
-  C#: [
+  "C#": [
     {
       question: "C# is developed by?",
       options: ["Google", "Microsoft", "Apple", "IBM"],
