@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "Quiz-App": {
+    "Quiz-App-Angular": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -58,10 +58,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Quiz-App:build:production"
+              "buildTarget": "Quiz-App-Angular:build:production"
             },
             "development": {
-              "buildTarget": "Quiz-App:build:development"
+              "buildTarget": "Quiz-App-Angular:build:development"
             }
           },
           "defaultConfiguration": "development"
