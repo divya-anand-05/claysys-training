@@ -1,0 +1,41 @@
+<div class="admin-container">
+  <h1>Manage Leaderboard</h1>
+
+  <h2>Select Course/Quiz</h2>
+  <select [(ngModel)]="selectedCourse" (change)="loadLeaderboard()">
+    <option value="">--Select Course--</option>
+    <option *ngFor="let course of courses" [value]="course">{{course}}</option>
+  </select>
+
+  <div class="table-container" *ngIf="leaderboard.length > 0">
+    <table role="table" aria-label="Leaderboard Table">
+      <thead>
+        <tr>
+          <th scope="col">Rank</th>
+          <th scope="col">User Name</th>
+          <th scope="col">Score</th>
+          <th scope="col">Date</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of leaderboard; let i = index" tabindex="0">
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.score }}/{{ item.total }}</td>
+          <td>{{ item.date }}</td>
+          <td>
+            <button class="edit" (click)="editScore(item.id)">Edit</button>
+            <button class="delete" (click)="deleteScore(item.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="selectedCourse && leaderboard.length === 0" style="margin-top:15px;color:#555;font-style:italic;">
+    No users have attended this quiz yet
+  </div>
+
+  <button (click)="goBack()" aria-label="Back to Dashboard">Back to Dashboard</button>
+</div>

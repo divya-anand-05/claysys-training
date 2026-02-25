@@ -1,0 +1,62 @@
+<div class="container">
+
+  <h1>Quiz Result</h1>
+
+  <p>
+    {{ username }}, you scored {{ score }} out of {{ total }}.
+  </p>
+
+  <!-- Circular Progress -->
+  <div class="progress-wrapper">
+
+    <svg
+      class="progress-ring"
+      width="160"
+      height="160"
+      role="progressbar"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      [attr.aria-valuenow]="percentage">
+
+      <circle
+        class="progress-ring-bg"
+        cx="80"
+        cy="80"
+        [attr.r]="radius">
+      </circle>
+
+      <circle
+        class="progress-ring-fill"
+        cx="80"
+        cy="80"
+        [attr.r]="radius"
+        [style.strokeDasharray]="circumference"
+        [style.strokeDashoffset]="offset">
+      </circle>
+
+    </svg>
+
+    <div class="progress-text">
+      {{ percentage }}%
+    </div>
+
+  </div>
+
+  <!-- Buttons -->
+  <div class="result-buttons">
+
+    <button (click)="retryQuiz()">
+      Retake Quiz
+    </button>
+
+    <button (click)="goHome()">
+      Choose Another Course
+    </button>
+
+    <button (click)="goLeaderboard()">
+      View Leaderboard
+    </button>
+
+  </div>
+
+</div>

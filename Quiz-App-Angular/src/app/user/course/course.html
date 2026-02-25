@@ -1,0 +1,159 @@
+<div class="container">
+
+     <div class="topbar">
+      <button class="themeToggle" (click)="toggleTheme()" title="Toggle dark mode">
+        <i [class]="isDark ? 'fas fa-sun' : 'fas fa-moon'"></i>
+      </button>
+      <button class="logOutBtn" (click)="logout()">Logout</button>
+  </div>
+
+    <h1>Quiz Application</h1>
+    <p>Select a course and enter your name</p>
+
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+
+    <!-- Name Input -->
+    <input type="text" placeholder="Enter your name" [(ngModel)]="username" (input)="onUsernameChange()" />
+
+    <!-- Recent Quizzes Section -->
+    <h3>Recent Quizzes</h3>
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Score</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngIf="recentQuizzes.length === 0">
+                <td colspan="4">No recent quizzes</td>
+            </tr>
+
+            <tr *ngFor="let q of recentQuizzes">
+                <td>{{ currentUser?.name }}</td>
+                <td>{{ q.course }}</td>
+                <td>{{ q.score }}/{{ q.total }}</td>
+                <td>{{ q.date }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Frontend Courses -->
+    <h3>Frontend</h3>
+    <div class="course-grid">
+        <div class="course-card" [class.selected]="selectedCourse === 'JavaScript'"
+            (click)="selectCourse('JavaScript')">
+            <div class="course-icon">
+                <i class="fab fa-js-square"></i>
+            </div>
+            <h4>JavaScript</h4>
+            <p>Test your JS basics</p>
+        </div>
+
+        <div class="course-card" [class.selected]="selectedCourse === 'HTML'" (click)="selectCourse('HTML')">
+            <div class="course-icon">
+                <i class="fab fa-html5"></i>
+            </div>
+            <h4>HTML</h4>
+            <p>Check your HTML knowledge</p>
+        </div>
+
+        <div class="course-card" [class.selected]="selectedCourse === 'CSS'" (click)="selectCourse('CSS')">
+            <div class="course-icon">
+                <i class="fab fa-css3-alt"></i>
+            </div>
+            <h4>CSS</h4>
+            <p>Style like a pro</p>
+        </div>
+
+        <div class="course-card" [class.selected]="selectedCourse === 'React'" (click)="selectCourse('React')">
+            <div class="course-icon">
+                <i class="fab fa-react"></i>
+            </div>
+            <h4>React</h4>
+            <p>Master React fundamentals</p>
+        </div>
+
+        <div class="course-card" [class.selected]="selectedCourse === 'Angular'" (click)="selectCourse('Angular')">
+            <div class="course-icon">
+                <i class="fab fa-angular"></i>
+            </div>
+            <h4>Angular</h4>
+            <p>Learn Angular framework</p>
+        </div>
+
+        <div class="course-card" [class.selected]="selectedCourse === 'Vue.js'" (click)="selectCourse('Vue.js')">
+            <div class="course-icon">
+                <i class="fab fa-vuejs"></i>
+            </div>
+            <h4>Vue.js</h4>
+            <p>Explore Vue.js</p>
+        </div>
+    </div>
+
+    <!-- Backend -->
+    <h3>Backend</h3>
+    <div class="course-grid">
+        <div class="course-card" [class.selected]="selectedCourse === 'C#'" (click)="selectCourse('C#')">
+            <div class="course-icon">
+                <i class="fas fa-hashtag"></i>
+            </div>
+            <h4>C#</h4>
+            <p>C# essentials</p>
+        </div>
+
+        <div class="course-card" [class.selected]="selectedCourse === 'Java'" (click)="selectCourse('Java')">
+            <div class="course-icon">
+                <i class="fab fa-java"></i>
+            </div>
+            <h4>Java</h4>
+            <p>Java programming</p>
+        </div>
+
+        <div class="course-card" [class.selected]="selectedCourse === 'Python'" (click)="selectCourse('Python')">
+            <div class="course-icon">
+                <i class="fab fa-python"></i>
+            </div>
+            <h4>Python</h4>
+            <p>Python basics</p>
+        </div>
+    </div>
+
+    <!-- Database Courses -->
+    <h3>Database</h3>
+    <div class="course-grid">
+        <div class="course-card" [class.selected]="selectedCourse === 'SQL'" (click)="selectCourse('SQL')">
+            <div class="course-icon">
+                <i class="fas fa-database"></i>
+            </div>
+            <h4>SQL</h4>
+            <p>SQL queries</p>
+        </div>
+
+        <div class="course-card" [class.selected]="selectedCourse === 'MySQL'" (click)="selectCourse('MySQL')">
+            <div class="course-icon">
+                <i class="fas fa-database"></i>
+            </div>
+            <h4>MySQL</h4>
+            <p>MySQL database</p>
+        </div>
+
+        <div class="course-card" [class.selected]="selectedCourse === 'MongoDB'" (click)="selectCourse('MongoDB')">
+            <div class="course-icon">
+                <i class="fas fa-leaf"></i>
+            </div>
+            <h4>MongoDB</h4>
+            <p>NoSQL database</p>
+        </div>
+    </div>
+
+    <!-- Start Button -->
+    <button (click)="startQuiz()">Start Quiz</button>
+
+</div>

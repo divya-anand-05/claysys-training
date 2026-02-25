@@ -1,0 +1,114 @@
+.container {
+  max-width: 500px;
+  margin: 60px auto;
+  background: rgba(255,255,255,0.95);
+  padding: 40px;
+  color: #333;
+  border-radius: 14px;
+  text-align: center;
+  animation: popIn 0.6s ease;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.progress-wrapper {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 30px auto;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-ring-bg {
+  fill: none;
+  stroke: #e5e7eb;
+  stroke-width: 12;
+}
+
+.progress-ring-fill {
+  fill: none;
+  stroke: #209ae0;
+  stroke-width: 12;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s ease;
+}
+
+.progress-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.result-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.result-buttons button {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  background: #209ae0;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.result-buttons button:hover {
+  background: #167bb5;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+body.dark .container {
+  background: #2c2c2c;
+  color: #f1f5f9;
+}
+
+body.dark .progress-wrapper {
+  background: linear-gradient(135deg, #1a2332 0%, #0f1419 100%);
+  box-shadow: 0 8px 20px rgba(54, 209, 220, 0.1);
+}
+
+body.dark .progress-ring-bg {
+  stroke: #374151;
+}
+
+body.dark .progress-text {
+  background: linear-gradient(135deg, #36d1dc, #5b86e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body.dark .result-buttons button:first-child {
+  background: linear-gradient(135deg, #36d1dc, #5b86e5);
+  box-shadow: 0 4px 15px rgba(54, 209, 220, 0.3);
+}
+
+body.dark .result-buttons button:first-child:hover {
+  box-shadow: 0 8px 25px rgba(54, 209, 220, 0.4);
+}
+
+body.dark .result-buttons button:last-child {
+  background: #1a2332;
+  color: #36d1dc;
+  border-color: #36d1dc;
+}
+
+body.dark .result-buttons button:last-child:hover {
+  background: #243447;
+  box-shadow: 0 4px 15px rgba(54, 209, 220, 0.2);
+}

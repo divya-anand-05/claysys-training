@@ -1,0 +1,353 @@
+/* ===============================
+   CONTAINER
+================================= */
+
+.admin-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.admin-container h1 {
+    color: #209ae0;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+.admin-container h2 {
+    color: #209ae0;
+    font-size: 18px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+/* ===============================
+   COURSE SELECT DROPDOWN
+================================= */
+
+.admin-container select {
+    width: 100%;
+    max-width: 350px;
+    padding: 12px 15px;
+    margin-bottom: 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    background: white;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    font-family: inherit;
+}
+
+.admin-container select:hover {
+    border-color: #209ae0;
+    box-shadow: 0 4px 12px rgba(32, 154, 224, 0.15);
+}
+
+.admin-container select:focus {
+    outline: none;
+    border-color: #209ae0;
+    box-shadow: 0 0 0 3px rgba(32, 154, 224, 0.15);
+}
+
+.admin-container select optgroup {
+    font-weight: 600;
+    color: #209ae0;
+}
+
+.admin-container select option {
+    color: #333;
+    padding: 10px;
+}
+
+/* ===============================
+   TABLE CONTAINER
+================================= */
+
+.table-container {
+    max-height: 600px;
+    overflow-y: auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-bottom: 25px;
+}
+
+/* ===============================
+   TABLE STYLING
+================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+table thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+table th {
+    background: linear-gradient(135deg, #209ae0, #6dd5fa);
+    color: white;
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #209ae0;
+}
+
+table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+table tbody tr {
+    background: white;
+    transition: all 0.3s ease;
+}
+
+table tbody tr:hover {
+    background: #f9f9f9;
+    transform: translateX(4px);
+    box-shadow: inset 4px 0 0 #209ae0;
+}
+
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ===============================
+   TABLE BUTTONS
+================================= */
+
+table button {
+    padding: 8px 14px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+table button.edit {
+    background: linear-gradient(135deg, #209ae0, #6dd5fa);
+    color: white;
+}
+
+table button.edit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(32, 154, 224, 0.3);
+}
+
+table button.delete {
+    background: linear-gradient(135deg, #dc3545, #e74c3c);
+    color: white;
+}
+
+table button.delete:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+/* ===============================
+   EMPTY STATE MESSAGE
+================================= */
+
+.admin-container > div[style*="margin-top"] {
+    padding: 20px;
+    text-align: center;
+    color: #888;
+    background: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* ===============================
+   BACK BUTTON
+================================= */
+
+.admin-container > button {
+    display: block;
+    margin: 0 auto;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #209ae0, #6dd5fa);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(32, 154, 224, 0.3);
+}
+
+.admin-container > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(32, 154, 224, 0.4);
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================= */
+
+@media (max-width: 768px) {
+    .admin-container {
+        padding: 20px;
+    }
+
+    .admin-container h1 {
+        font-size: 24px;
+    }
+
+    table th,
+    table td {
+        padding: 10px 8px;
+        font-size: 14px;
+    }
+
+    table button {
+        padding: 6px 10px;
+        font-size: 12px;
+        margin-right: 4px;
+    }
+
+    .admin-container select {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .admin-container > button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .table-container {
+        max-height: 400px;
+    }
+
+    table th,
+    table td {
+        padding: 8px 6px;
+    }
+
+    table button {
+        padding: 5px 8px;
+        font-size: 11px;
+    }
+}
+
+/* ===============================
+   DARK MODE
+================================= */
+
+body.dark {
+    background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+}
+
+body.dark .admin-container {
+    background: #16213e;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .admin-container h1,
+body.dark .admin-container h2 {
+    color: #36d1dc;
+}
+
+body.dark .admin-container select {
+    background: #0f1419;
+    border-color: #2d2d44;
+    color: #e5e7eb;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .admin-container select:hover {
+    border-color: #36d1dc;
+    box-shadow: 0 4px 12px rgba(54, 209, 220, 0.15);
+}
+
+body.dark .admin-container select:focus {
+    border-color: #36d1dc;
+    box-shadow: 0 0 0 3px rgba(54, 209, 220, 0.15);
+}
+
+body.dark .admin-container select optgroup {
+    color: #36d1dc;
+}
+
+body.dark .admin-container select option {
+    background: #16213e;
+    color: #e5e7eb;
+}
+
+body.dark .table-container {
+    background: #0f1419;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark table th {
+    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+    color: white;
+    border-bottom-color: #36d1dc;
+}
+
+body.dark table td {
+    border-bottom-color: #2d2d44;
+    color: #e5e7eb;
+}
+
+body.dark table tbody tr {
+    background: #0f1419;
+}
+
+body.dark table tbody tr:hover {
+    background: #16213e;
+    box-shadow: inset 4px 0 0 #36d1dc;
+}
+
+body.dark table button.edit {
+    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+    color: white;
+    box-shadow: 0 2px 6px rgba(54, 209, 220, 0.2);
+}
+
+body.dark table button.edit:hover {
+    box-shadow: 0 4px 12px rgba(54, 209, 220, 0.3);
+}
+
+body.dark table button.delete {
+    background: linear-gradient(135deg, #ef4444, #f87171);
+    color: white;
+    box-shadow: 0 2px 6px rgba(239, 68, 68, 0.2);
+}
+
+body.dark table button.delete:hover {
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+body.dark .admin-container > div[style*="margin-top"] {
+    background: rgba(54, 209, 220, 0.05);
+    color: #a0aec0;
+}
+
+body.dark .admin-container > button {
+    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+    box-shadow: 0 4px 12px rgba(54, 209, 220, 0.3);
+}
+
+body.dark .admin-container > button:hover {
+    box-shadow: 0 6px 16px rgba(54, 209, 220, 0.4);
+}

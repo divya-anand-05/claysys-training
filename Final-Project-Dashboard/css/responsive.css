@@ -59,7 +59,7 @@
   }
 
   .order-card .row {
-    grid-template-columns: 1.5fr 2fr 1fr 1fr 1fr 1fr;
+    grid-template-columns:repeat(6,1fr);
     align-items: center;
   }
 
@@ -103,7 +103,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    transform: translateX(-100%);
+    transform: translateX(-100%);             /*Hidden by default*/
     transition: transform 0.3s ease-in-out;
     z-index: 20;
     border-radius: 0 20px 20px 0;
@@ -200,7 +200,7 @@
   }
 
   .order-card .row {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(6,1fr);
   }
 
   .row.header {
@@ -293,7 +293,7 @@
   .order-row,
   .order-row-pending,
   .row {
-    grid-template-columns: 1fr 2fr 2fr 1fr 2fr 2fr 1fr;
+    grid-template-columns:repeat(6,1fr);
     gap: 15px;
     overflow-x: auto;
     font-size: 11px;
@@ -305,7 +305,7 @@
   }
 
   .order-card .row {
-    grid-template-columns: 1fr 2fr 2fr 1fr 2fr 2fr;
+    grid-template-columns:repeat(7,1fr);
   }
 
   table,

@@ -3,7 +3,7 @@ const total = localStorage.getItem("total");
 const username = localStorage.getItem("username");
 const course = localStorage.getItem("course");
 
-const percentage = Math.round((score/total)*100); // 7/10*100 --->70%
+const percentage = Math.round((score/total)*100); // 7/10*100
 
 document.getElementById("summary").textContent =
 

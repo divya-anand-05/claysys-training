@@ -1,0 +1,40 @@
+<div class="admin-container">
+  <button (click)="goBack()" aria-label="Back to Dashboard">Back to Dashboard</button>
+  
+  <h1>Manage Questions</h1>
+
+  <div class="course-selection">
+    <h3>Select Course / Language</h3>
+    <select [(ngModel)]="selectedCourse" (change)="selectCourse(selectedCourse)">
+      <option value="">--Select Course--</option>
+     <ng-container *ngFor="let group of courseGroups">
+  <optgroup [label]="group">
+    <option *ngFor="let course of courses[group]" [value]="course">{{course}}</option>
+  </optgroup>
+</ng-container> 
+    </select>
+  </div>
+
+  <h3 *ngIf="selectedCourse">Adding questions for: {{selectedCourse}}</h3>
+
+  <section *ngIf="selectedCourse">
+    <h2>{{ editIndex !== null ? 'Edit Question' : 'Add Question' }}</h2>
+    <input [(ngModel)]="questionText" placeholder="Question">
+    <input [(ngModel)]="options[0]" placeholder="Option 1">
+    <input [(ngModel)]="options[1]" placeholder="Option 2">
+    <input [(ngModel)]="options[2]" placeholder="Option 3">
+    <input [(ngModel)]="options[3]" placeholder="Option 4">
+    <input [(ngModel)]="answer" placeholder="Correct Answer">
+    <button (click)="addOrUpdateQuestion()">{{ editIndex !== null ? 'Update Question' : 'Add Question' }}</button>
+
+    <ul id="questionList">
+      <li *ngFor="let q of questions; let i = index">
+        <span class="question-text"><b>{{i+1}}:</b> {{q.question}}</span>
+        <div>
+          <button class="edit" (click)="editQuestion(i)">Edit</button>
+          <button class="delete" (click)="deleteQuestion(i)">Delete</button>
+        </div>
+      </li>
+    </ul>
+  </section>
+</div>

@@ -1,4 +1,3 @@
-
 const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
 if (!currentUser) {
@@ -286,4 +285,3 @@ if(currentUser){
 
 
 loadQuestion();
-
