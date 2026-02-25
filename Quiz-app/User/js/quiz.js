@@ -16,17 +16,17 @@ let questions = JSON.parse(localStorage.getItem("questions")) || {};
 const adminQuestions = questions[course] || [];
 
 if (adminQuestions.length === 0) {
-    questions = Defaultquestions;  // Use your data.js defaults
+    questions = Defaultquestions;  
 } else {
-    questions = { [course]: adminQuestions };  // Keep admin structure
+    questions = { [course]: adminQuestions }; 
 }
 
-// Safety check (uncommented)
-// if (!questions[course] || questions[course].length === 0) {
-//     alert("No questions available for this course yet!");
-//     window.location.href = "index.html";
-//     return;
-// }
+// Safety check
+if (!questions[course] || questions[course].length === 0) {
+    alert("No questions available for this course yet!");
+    window.location.href = "index.html";
+
+}
 
 // Header display
 document.getElementById("courseName").textContent = course;
@@ -43,17 +43,12 @@ const optionsEl = document.getElementById("options");
 const nextBtn = document.getElementById("nextBtn");
 
 // prevent blank quiz
-<<<<<<< HEAD
-// if (!questions[course] || questions[course].length === 0) {
-//     alert("No questions available for this course yet!");
-//     window.location.href = "index.html";
-// }
-=======
+
  if (!questions[course] || questions[course].length === 0) {
     alert("No questions available for this course yet!");
     window.location.href = "index.html";
  }
->>>>>>> 9cc9f593d90c54ac5133e49388cfbacc05a6ce51
+
 
 
 // progress bar
@@ -174,11 +169,10 @@ function loadQuestion(){
 
     const currentQuestion = questions[course][currentIndex];
 
-    // if (!currentQuestion || !currentQuestion.question) {
-    //     alert("Question data corrupted. Please re-add questions.");
-    //     window.location.href = "index.html";
-    //     return;
-    // }
+    if (!currentQuestion || !currentQuestion.question) {
+        alert("Question data corrupted. Please re-add questions.");
+        window.location.href = "index.html";
+    }
 
     //clear old options and create new 
     questionEl.textContent = currentQuestion.question;
