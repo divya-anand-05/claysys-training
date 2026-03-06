@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using QuizAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using QuizAPI.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -30,6 +31,7 @@ namespace QuizAPI.Controllers
             return question;
         }
 
+        [Authorize (Roles = "Admin")]
         [HttpPost]
         public async Task<ActionResult<Questions>> CreateQuestion(Questions question)
         {
@@ -60,6 +62,7 @@ namespace QuizAPI.Controllers
             }
         }
 
+        [Authorize (Roles ="Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateQuestion(int id, Questions question)
         {
@@ -79,6 +82,7 @@ namespace QuizAPI.Controllers
             return NoContent();
         }
 
+        [Authorize (Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteQuestion(int id)
         {
