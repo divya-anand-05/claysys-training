@@ -1,10 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using QuizAPI.Data;
+using Quiz_FullStack_App.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -52,11 +52,11 @@ builder.Services.AddCors(options =>
                .AllowCredentials();
     });
 
-    
+
 });
 
 // Add DbContext
-builder.Services.AddDbContext<QuizDbContext>(options =>
+builder.Services.AddDbContext<QuizAppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
 
@@ -86,19 +86,15 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-
-    app.UseSwagger();
-    app.UseSwaggerUI();
-
-
 // Configure pipeline
 if (app.Environment.IsDevelopment())
 {
-
+    app.UseSwagger();
+    app.UseSwaggerUI();
 
     using (var scope = app.Services.CreateScope())
     {
-        var context = scope.ServiceProvider.GetRequiredService<QuizDbContext>();
+        var context = scope.ServiceProvider.GetRequiredService<QuizAppDbContext>();
 
         // Create admin if doesn't exist
         if (!context.Users.Any(u => u.Email == "admin@gmail.com"))
@@ -119,14 +115,17 @@ if (app.Environment.IsDevelopment())
 
 
 
-
 app.UseCors("AllowAngular");
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapFallbackToFile("index.html");
 
 app.Run();
