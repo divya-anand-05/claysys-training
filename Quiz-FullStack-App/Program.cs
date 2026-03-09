@@ -4,6 +4,7 @@ using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Quiz_FullStack_App.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -57,7 +58,7 @@ builder.Services.AddCors(options =>
 
 // Add DbContext
 builder.Services.AddDbContext<QuizAppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
 
 var key = builder.Configuration["Jwt:Key"];
