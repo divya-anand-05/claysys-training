@@ -87,11 +87,13 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
+app.UseSwagger();
+app.UseSwaggerUI();
+
 // Configure pipeline
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    
 
     using (var scope = app.Services.CreateScope())
     {
