@@ -27,7 +27,7 @@ builder.Services.AddSwaggerGen(c =>
         BearerFormat = "JWT"
     });
 
-    //  THIS IS MISSING - ADD THIS:
+    
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
@@ -90,31 +90,33 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
-// Configure pipeline
-if (app.Environment.IsDevelopment())
+
+using (var scope = app.Services.CreateScope())
 {
-    
+    var context = scope.ServiceProvider.GetRequiredService<QuizAppDbContext>();
+    var adminEmail = "admin@gmail.com";
+    var existingAdmin = context.Users.FirstOrDefault(u => u.Email == adminEmail);
 
-    using (var scope = app.Services.CreateScope())
+    if (existingAdmin == null)
     {
-        var context = scope.ServiceProvider.GetRequiredService<QuizAppDbContext>();
-
-        // Create admin if doesn't exist
-        if (!context.Users.Any(u => u.Email == "admin@gmail.com"))
+        var admin = new User
         {
-            var admin = new User
-            {
-                Name = "Admin",
-                Email = "admin@gmail.com",
-                Password = BCrypt.Net.BCrypt.HashPassword("admin123"),
-                Role = "Admin"
-            };
-            context.Users.Add(admin);
-            context.SaveChanges();
-        }
+            Name = "Admin",
+            Email = adminEmail,
+            Password = BCrypt.Net.BCrypt.HashPassword("admin123"),
+            Role = "Admin"
+        };
+        context.Users.Add(admin);
+        context.SaveChanges();
+        Console.WriteLine(" New admin created");
+    }
+    else if (existingAdmin.Role != "Admin")
+    {
+        existingAdmin.Role = "Admin";
+        context.SaveChanges();
+        Console.WriteLine(" Admin role updated to Admin");
     }
 }
-
 
 
 
