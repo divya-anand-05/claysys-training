@@ -2,7 +2,7 @@
 
 A comprehensive full-stack quiz application built with **Angular** (Frontend) and **ASP.NET Core** (Backend) with JWT authentication, real-time scoring, and an admin dashboard.
 
-## 📋 Table of Contents
+##  Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
@@ -64,7 +64,7 @@ https://claysys-training.onrender.com/
 -  **Responsive Tables** with Mobile Support
 -  **Accessibility-Friendly Interface**
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 ### Frontend
 
@@ -309,9 +309,9 @@ https://claysys-training.onrender.com/swagger/index.html
 
 ---
 
-## 📘 Usage Guide
+##  Usage Guide
 
-### 👤 For Users
+### For Users
 
 #### Register Account
 1. Click **"Register"**
@@ -388,9 +388,9 @@ https://claysys-training.onrender.com/swagger/index.html
 
 ---
 
-## 🔗 Quick Links
+## Quick Links
 
-- 🌐 **Live App:** [Open Quiz Application](https://claysys-training.onrender.com/)
-- 📖 **API Docs:** [Swagger Documentation](https://claysys-training.onrender.com/swagger/index.html)
-- 💻 **GitHub:** [View Repository](https://github.com/yourusername/Quiz-App-ASP)
+-  **Live App:** [Open Quiz Application](https://claysys-training.onrender.com/)
+-  **API Docs:** [Swagger Documentation](https://claysys-training.onrender.com/swagger/index.html)
+-  **GitHub:** [View Repository](https://github.com/yourusername/Quiz-App-ASP)
 
