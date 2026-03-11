@@ -302,8 +302,12 @@ https://localhost:7210
 The Angular frontend will be automatically served by ASP.NET Core.
 
 
+---
+
 **API Documentation:**
 https://claysys-training.onrender.com/swagger/index.html
+
+---
 
 ## 📘 Usage Guide
 
@@ -381,6 +385,8 @@ https://claysys-training.onrender.com/swagger/index.html
 - **Search users by username**
 - **Edit user scores**
 - **Delete quiz results**
+
+---
 
 ## 🔗 Quick Links
 
