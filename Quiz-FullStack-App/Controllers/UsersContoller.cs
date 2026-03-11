@@ -103,7 +103,7 @@ namespace QuizAPI.Controllers
                     });
                 }
 
-                // KEY FIX: Use BCrypt.Verify() to compare passwords
+                // Use BCrypt.Verify() to compare passwords
                 bool isPasswordValid = BCrypt.Net.BCrypt.Verify(loginRequest.Password, user.Password);
 
                 if (!isPasswordValid)
@@ -115,7 +115,7 @@ namespace QuizAPI.Controllers
                     });
                 }
 
-                // Return user data (NOT password!)
+                // Return user data (NOT password)
                 var token = GenerateJwtToken(user);
 
                 return Ok(new
