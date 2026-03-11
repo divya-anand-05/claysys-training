@@ -7,7 +7,6 @@ A comprehensive full-stack quiz application built with **Angular** (Frontend) an
 - [Overview](#overview)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
 - [Installation & Setup](#installation--setup)
 - [Database Setup](#database-setup)
 - [Running the Application](#running-the-application)
@@ -15,7 +14,6 @@ A comprehensive full-stack quiz application built with **Angular** (Frontend) an
 - [Usage Guide](#usage-guide)
 - [Deployment](#deployment)
 - [Troubleshooting](#troubleshooting)
-- [Project Status](#project-status)
 
 ## Overview
 
@@ -109,35 +107,8 @@ https://claysys-training.onrender.com/
 | GitHub | Version Control |
 | Git | Version Control System |
 
-## 📂 Project Structure
-Quiz-App-ASP/
-│
-├── wwwroot/ # Angular build output
-│ ├── index.html
-│ ├── styles*.css
-│ ├── main*.js
-│ └── assets/
-│
-├── Controllers/
-│ ├── UsersController.cs # User management
-│ ├── QuestionsController.cs # Question CRUD
-│ ├── ResultsController.cs # Result management
-│
-├── Models/
-│ ├── User.cs # User model
-│ ├── Question.cs # Question model
-│ ├── Result.cs # Result model
-│
-├── Data/
-│ ├── QuizAppDbContext.cs # DbContext
-│ └── Migrations/ # EF Core migrations
-│
-│
-├── Program.cs # App entry point
-├── appsettings.json # Configuration
-└── appsettings.Production.json # Production config
 
-## 📦 Installation & Setup
+##  Installation & Setup
 
 ### Prerequisites
 
@@ -197,11 +168,7 @@ Replace **YOUR_SERVER** with your SQL Server instance.
 
 Run the following command to create the database and tables:
 
-```bash
-dotnet ef database update
-```
-
-Or using **Package Manager Console**:
+using **Package Manager Console**:
 
 ```powershell
 Update-Database
@@ -261,7 +228,7 @@ export const environment = {
 
 The `apiUrl` should point to your ASP.NET Core backend API.
 
-## 🚀 Running the Application
+##  Running the Application
 
 ### Option 1: Development Mode (Separate Servers)
 
@@ -334,8 +301,86 @@ https://localhost:7210
 
 The Angular frontend will be automatically served by ASP.NET Core.
 
+
 **API Documentation:**
 https://claysys-training.onrender.com/swagger/index.html
+
+## 📘 Usage Guide
+
+### 👤 For Users
+
+#### Register Account
+1. Click **"Register"**
+2. Enter **Name, Email, and Password**
+3. Submit the form to create your account
+
+---
+
+#### Login
+1. Enter your **Email** and **Password**
+2. Click **"Login"** to access the application
+
+---
+
+#### Take Quiz
+1. Select a **course**
+2. Answer **5 questions** (15 seconds per question)
+3. View **instant feedback** after each answer
+4. See your **final score and percentage**
+
+---
+
+#### View Results
+- View your **personal quiz history**
+- See **score breakdown**
+- Option to **retry the quiz**
+
+---
+
+#### Leaderboard
+- View **rankings by course**
+- **Search by username**
+- See your **personal rank**
+
+---
+
+#### Theme Toggle
+- Click the **Sun / Moon icon**
+- Switch between **Light Mode** and **Dark Mode**
+
+---
+
+###  For Admins
+
+#### Login as Admin
+
+
+---
+
+#### Dashboard
+- View **application statistics**
+  - Total Questions
+  - Registered Users
+  - Quiz Scores
+- Access **quick action buttons**
+
+---
+
+#### Manage Questions
+- View **all questions**
+- **Add new questions**
+- **Edit existing questions**
+- **Delete questions**
+- **Filter questions by course**
+
+---
+
+#### Leaderboard Management
+- View **all quiz results**
+- **Filter results by course**
+- **Search users by username**
+- **Edit user scores**
+- **Delete quiz results**
 
 ## 🔗 Quick Links
 
